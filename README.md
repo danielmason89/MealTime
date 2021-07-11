@@ -1,7 +1,5 @@
-# Savvy-Coders-Capstone-Project-Meal-time-app
+# Savvy Coders Capstone Project: Meal-time
 Beginning of Capstone Project Repo 
-
-Savvy coders' Capstone project : Meal-time
 
 Define Audience: My audience is young couples, single parents, young professionals that are either married or single, who either do or do not have children, perferably millennials,  and everyone in-between.
 

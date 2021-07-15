@@ -66,13 +66,13 @@ nav ul {
 
 #logo {
     flex: 2 1 40rem;
-    font-family: "Pattaya", sans-serif;
+    font-family: "Montserrat Alternates", sans-serif;
     font-weight: 400;
 }
 
 .hero {
     min-height: 90vh;
-    background: linear-gradient(#44a1a0, transparent), url("../img/landing-page.jpg");
+    background: linear-gradient(#44a1a0, transparent), url("");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -84,9 +84,29 @@ nav ul {
     text-align: center;
 }
 
-.form-wrapper {
-    background: rgba(19, 28, 39, 0.8);
-    width: 60%;
+footer {
     color: white;
-    border-radius: 20px;
+    background: #247b7b;
+}
+
+.footer-wrapper {
+    display: flex;
+    padding: 2rem;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    min-height: 10vh;
+    flex-wrap: wrap;
+}
+
+footer h5 {
+    flex: 1 1 40rem;
+}
+
+footer ul {
+    display: flex;
+    list-style: none;
+    flex: 1 1 40rem;
+    justify-content: space-between;
+    align-items: center;
 }

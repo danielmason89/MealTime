@@ -38,6 +38,13 @@ a {
     text-decoration: none;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
 .main-header {
     background: #247b7b;
     color: #fff;
@@ -50,7 +57,7 @@ nav {
     display: flex;
     width: 90%;
     margin: auto;
-    padding: 2rem;
+    padding: 2rem 0rem;
     min-height: 10vh;
     align-items: center;
     flex-wrap: wrap;
@@ -62,17 +69,25 @@ nav ul {
     justify-content: space-around;
     align-items: center;
     list-style: none;
+    min-height: 10vh;
+    padding: 1rem;
 }
 
 #logo {
-    flex: 2 1 40rem;
+    flex: 1 1 20rem;
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 400;
 }
 
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+}
+
 .hero {
     min-height: 90vh;
-    background: linear-gradient(#44a1a0, transparent), url("");
+    background: linear-gradient(#ffffff, transparent), url("./images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -82,6 +97,16 @@ nav ul {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.hero h2 {
+    text-align: center;
+    margin: 2rem;
+}
+
+.burger,
+.menu-check {
+    display: none;
 }
 
 footer {
@@ -109,4 +134,50 @@ footer ul {
     flex: 1 1 40rem;
     justify-content: space-between;
     align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    /* burger thing */
+    .burger {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+    .burger span {
+        padding: 0.2rem 2rem;
+        background: var(--gray-text);
+        margin: 0.5rem 0rem;
+        display: block;
+        transition: all 0.5s ease;
+    }
+    .nav-links a {
+        color: white;
+        font-size: var(--header3);
+        text-decoration: underline;
+    }
+    .nav-links {
+        background: var(--background-color);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        flex-direction: column;
+        align-items: center;
+        transition: transforn 1s ease;
+    }
+    .nav-open {
+        transform: translateX(-100%);
+    }
+    .toggle .line1 {
+        transform: rotateZ(45deg) translateY(300%);
+        background: white;
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotateZ(-45deg) translateY(-300%);
+        background: white;
+    }
 }

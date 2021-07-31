@@ -1,10 +1,16 @@
 import html from "html-literal";
-export default () => html `<main>
+import apple from "../icon/apple-brands.svg";
+import googlePlay from "../icon/google-play-brands.svg";
+import omnivore from "../images/ala--lHZUkiWM74-unsplash.jpg";
+import veggie from "../images/megan-thomas-xMh_ww8HN_Q-unsplash.jpg";
+import meattie from "../images/jon-tyson-kctt4tL1dkE-unsplash.jpg";
+export default () => html `
+<main>
 <section class="hero flex">
     <h2>Meals Simplified.</h2>
     <h3>Begin enjoying your meals more with Mealtime</h3>
-    <button>app store</button>
-    <button>google play</button>
+    <button class="button"><img src="${apple}" alt="apple-app-icon" /> Download</button>
+    <button class="button"><img src="${googlePlay}" alt="google-play-icon" /> Download</button>
     <!-- included images for visual impact -->
 </section>
 
@@ -32,36 +38,65 @@ export default () => html `<main>
 
 <section id="recipes">
     <header class="recipes-header">
-        A Time Saving, Meal-preparing Platform
+       <h2>A Time Saving, Meal-preparing Platform</h2>
     </header>
-    <div id="recipes-carousel" class="carousel slide" data-ride="false">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <h2 class="recipe-text">Vegan. We've got the best and brightest to leave you feeling better about what your eating.</h2>
-                <img class="recipe-image" src="" alt="">
-                <em>Healthy Tomorrow</em>
-            </div>
-            <div class="carousel-item">
-                <h2 class="recipe-text">Protein-focus. Protein orientated meals, to help from workout to workout</h2>
-                <img class="recipe-image" src="" alt="">
-                <em>Beefier Tomorrow</em>
-            </div>
-            <div class="carousel-item">
-                <h2 class="recipe-text">The best of both world. get your veggie with that protein</h2>
-                <img class="recipe-image" src="" alt="">
-                <em>Omnivore</em>
-            </div>
-        </div>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+   
+<div class="numbertext"><p>Healthy Tomorrow</p></div>
+    <img src="${veggie}"
+style="width:100%">
+    <div class="text">Vegan. We've got the best and brightest to leave you feeling better about what your eating.</div>
+  </div>
 
-        <a class="carousel-control-prev" href="#recipe-carousel" role="button" data-slide="prev">
+  <div class="mySlides fade">
+   
+<div class="numbertext"><p>Beefier Tomorrow</p></div>
+    <img src="${meattie}"
+style="width:100%">
+    <div class="text">Protein-focus. Protein orientated meals, to help from workout to workout</div>
+  </div>
+
+  <div class="mySlides fade">
+   
+<figure class="numbertext"><p>Omnivore</p></figure>
+    <img src="${omnivore}"
+style="width:100%">
+    <h1 class="text" style="color:red;">The best of both world. get your veggie with that protein</h1>
+  </div>
+
+  <!-- Next and previous
+  buttons -->
+  <a class="prev">❮</a>
+ 
+<a class="next">❯</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+
+  <span class="dot" onclick="currentSlide(2)"></span>
+ 
+<span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+     <!-- <a class="carousel-control-prev" href="#recipe-carousel" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#recipe-carousel" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-    </div>
+            <span class="sr-only">Next</span> -->
 </section>
 
-<section id="contact">contact/call to action section/section>
+
+
+<section id="cta">contact/call to action</section>
 </main>`;
+
+

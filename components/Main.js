@@ -93,7 +93,7 @@ style="width:100%">
 
 
 <section id="cta">
-<h3>Find A way to get time back from the Kitchen.</h3>
+<h3>Find a way to get time back from the Kitchen.</h3>
 <button class="button"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
     <button class="button"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
 </section>

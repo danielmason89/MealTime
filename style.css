@@ -67,9 +67,11 @@ nav {
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
+  position: fixed;
+  transition: top 0.3s;
   top: 0px;
   z-index: 3;
+  text-decoration: none;
 }
 
 nav ul {

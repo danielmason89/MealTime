@@ -61,15 +61,16 @@ a {
 
 nav {
   display: flex;
+  justify-content: space-between;
   width: 90%;
-  margin: auto;
+  margin: 0rem 10rem;
   padding: 2rem 0rem;
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
   transition: top 0.3s;
-  top: 0px;
+  top: 0;
   z-index: 3;
   text-decoration: none;
 }
@@ -77,7 +78,7 @@ nav {
 nav ul {
   display: flex;
   flex: 1 1 40rem;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   list-style: none;
   min-height: 10vh;
@@ -97,10 +98,16 @@ nav ul {
 }
 
 /* Download Button */
+#btn-container {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+}
 
-.button {
-  padding: 2rem 4rem;
-  margin: 5rem 3rem 5rem 0rem;
+.button1,
+.button2 {
+  padding: 0rem 4rem;
+  margin: 9rem 6rem;
   width: auto;
   height: 10%;
   background: #0d5c63;
@@ -110,31 +117,33 @@ nav ul {
   transition: background 0.5s ease-in-out;
   border-radius: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
 
-.button:hover {
+.button1:hover,
+.button2:hover {
   background: #0f7e88;
 }
 
-.button:focus {
+.button1:focus,
+.button2:focus {
   background: #247b7b;
 }
 
 #button-image {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   width: 2rem;
-  padding: 0 2rem 0 0;
+  height: 2rem;
+  margin: 1rem 2rem 1rem 0;
 }
 
 .hero {
   min-height: 90vh;
-  background: linear-gradient(#ffffff, 4%, transparent),
-    url("./images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  background: url("./images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -143,7 +152,7 @@ nav ul {
 
 .hero h2 {
   text-align: center;
-  margin: 5rem 0rem;
+  margin: 30rem 0rem;
 }
 
 .hero h3 {

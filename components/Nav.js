@@ -1,7 +1,7 @@
 import html from "html-literal";
 export default () => html `
-<nav>
-    <h1 id="logo"><a href="#home">Mealtime</a></h1>
+<nav id ="navbar">
+    <h1 id="logo"><a href="#">Mealtime</a></h1>
     <ul class="nav-links">
         <li><a href="../recipes.html">Recipes</a></li>
         <li><a href="../about.html">About </a></li>

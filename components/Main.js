@@ -9,8 +9,11 @@ export default () => html `
 <section class="hero flex">
     <h2>Meals Simplified.</h2>
     <h3>Begin enjoying your meals more with Mealtime</h3>
-    <button class="button"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
-    <button class="button"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
+    <div id="btn-container">
+    <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
+    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
+    </div>
+
 </section>
 
 <section id="value">
@@ -94,8 +97,9 @@ style="width:100%">
 
 <section id="cta">
 <h3>Find a way to get time back from the Kitchen.</h3>
-<button class="button"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
-    <button class="button"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
+<div id="btn-container">
+    <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
+    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
 </section>
 </main>`;
 

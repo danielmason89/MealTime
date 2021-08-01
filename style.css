@@ -12,6 +12,12 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: "Montserrat Alternates", sans-serif;
 }
@@ -53,12 +59,6 @@ a {
   align-items: center;
 }
 
-.main-header {
-  position: sticky;
-  top: 0px;
-  z-index: 3;
-}
-
 nav {
   display: flex;
   width: 90%;
@@ -67,6 +67,9 @@ nav {
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
 }
 
 nav ul {
@@ -94,8 +97,10 @@ nav ul {
 /* Download Button */
 
 .button {
-  padding: 2rem 3rem;
-  margin: 5% 3% 5% 0%;
+  padding: 2rem 4rem;
+  margin: 5rem 3rem 5rem 0rem;
+  width: auto;
+  height: 10%;
   background: #0d5c63;
   border: none;
   color: #fff;
@@ -104,6 +109,8 @@ nav ul {
   border-radius: 2rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .button:hover {
@@ -112,6 +119,14 @@ nav ul {
 
 .button:focus {
   background: #247b7b;
+}
+
+#button-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 2rem;
+  padding: 0 2rem 0 0;
 }
 
 .hero {
@@ -126,7 +141,11 @@ nav ul {
 
 .hero h2 {
   text-align: center;
-  margin: 2rem;
+  margin: 5rem 0rem;
+}
+
+.hero h3 {
+  padding: 5rem;
 }
 
 .burger,
@@ -136,10 +155,26 @@ nav ul {
 
 /* Values Section */
 
-.value {
+#value {
   min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 10rem 5rem;
+  background: linear-gradient(black, 50%, transparent),
+    url("./images/kevin-mccutcheon-r-dChNeNKk8-unsplash.jpg");
+  text-align: left;
+  font-size: 2rem;
+}
+
+.value-header {
+  color: #247b7b;
+  width: 90%;
+  margin: auto;
 }
 
 /* Recipes Section */
@@ -198,11 +233,16 @@ nav ul {
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
+  color: #247b7b;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
   top: 0;
+}
+
+.diet {
+  max-width: 100rem;
+  height: auto;
 }
 
 /* The dots/bullets/indicators */
@@ -256,6 +296,7 @@ nav ul {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -281,6 +322,7 @@ footer {
 footer h5 {
   color: #247b7b;
   flex: 1 1 40rem;
+  text-align: left;
 }
 
 footer ul {
@@ -291,7 +333,7 @@ footer ul {
   align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   /* burger thing */
   .burger {
     position: relative;
@@ -334,5 +376,17 @@ footer ul {
   .toggle .line3 {
     transform: rotateZ(-45deg) translateY(-300%);
     background: white;
+  }
+  .form-wrapper {
+    width: 100%;
+  }
+  footer {
+    text-align: center;
+  }
+  footer h5 {
+    padding-bottom: 3rem;
+    color: #247b7b;
+    flex: 1 1 40rem;
+    text-align: center;
   }
 }

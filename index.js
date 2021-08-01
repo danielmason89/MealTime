@@ -12,7 +12,6 @@ render();
 
 
 // Burger Functionality
-
 const nav = document.querySelector(".nav-links");
 const burger = document.querySelector(".burger");
 const links = nav.querySelectorAll("a");
@@ -28,6 +27,7 @@ links.forEach(link => {
         burger.classList.toggle("toggle");
     });
 });
+
 
 // Slide show functionality
 function mySlideshow(){
@@ -69,4 +69,4 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
-}
+};

@@ -1,4 +1,4 @@
-/* global styles */
+/* Global styles */
 
 * {
   margin: 0;
@@ -59,6 +59,8 @@ a {
   align-items: center;
 }
 
+/* Nav and Hero Section */
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -106,10 +108,9 @@ nav ul {
 
 .button1,
 .button2 {
-  padding: 0rem 4rem;
-  margin: 9rem 6rem;
+  padding: 0rem 3.5rem;
+  margin: 12rem 7rem;
   width: auto;
-  height: 10%;
   background: #0d5c63;
   border: none;
   color: #fff;
@@ -117,9 +118,7 @@ nav ul {
   transition: background 0.5s ease-in-out;
   border-radius: 2rem;
   display: flex;
-  flex-flow: row wrap;
   align-items: center;
-  justify-content: center;
 }
 
 .button1:hover,
@@ -133,17 +132,16 @@ nav ul {
 }
 
 #button-image {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   width: 2rem;
   height: 2rem;
   margin: 1rem 2rem 1rem 0;
 }
 
+/* Hero Section */
+
 .hero {
   min-height: 90vh;
-  background: url("./images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -152,7 +150,8 @@ nav ul {
 
 .hero h2 {
   text-align: center;
-  margin: 30rem 0rem;
+  margin: 25rem 0rem;
+  padding: 0rem 0rem 6rem 0rem;
 }
 
 .hero h3 {
@@ -164,32 +163,72 @@ nav ul {
   display: none;
 }
 
-/* Values Section */
+/* Food Section */
 
-#value {
+#food {
   min-height: 100vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  position: relative;
-  padding: 10rem 5rem;
+  padding: 9rem 5rem;
   background: linear-gradient(black, 50%, transparent),
-    url("./images/kevin-mccutcheon-r-dChNeNKk8-unsplash.jpg");
+    url("/images/edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg");
   text-align: left;
   font-size: 2rem;
 }
 
-.value-header {
-  color: #247b7b;
+.food-header {
+  color: #fffffa;
   width: 90%;
   margin: auto;
 }
 
+.food-header h2 {
+  padding: 1rem 0rem;
+  text-decoration: underline;
+  text-decoration-thickness: 0.5rem;
+}
+
+.food-header h3 {
+  padding: 9rem 0rem;
+  background: linear-gradient(#0a7f8b, #beb8b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Features */
+#features {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-container {
+  margin: 4rem;
+}
+
+.feature-svg {
+  margin: 5rem 0rem;
+  padding: 5% 40%;
+}
+
+.feature-title,
+.feature-text {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 /* Recipes Section */
 
+.recipes-header {
+  text-align: center;
+  margin-top: 5rem;
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 100rem;
@@ -254,6 +293,7 @@ nav ul {
 .diet {
   max-width: 100rem;
   height: auto;
+  width: 500px;
 }
 
 /* The dots/bullets/indicators */

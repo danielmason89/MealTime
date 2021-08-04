@@ -1,14 +1,25 @@
 // import food from "./icon/mealTime.svg";
 import {Nav, Main, Footer} from './components';
+import * as state from "/store"
+import Navigo from "navigo";
+import { capitalize } from "lodash";
+
+const router = new Navigo (window.location.origin);
+
+router.on({
+  ":page": params => render(state[capitalize(params.page)]),
+  "/": () => render(state.Home)
+})
+.resolve();
 //import slides from "./lib/functions/slideShow";
 
-function render () {
+function render (st = state.Home) {
     document.querySelector("#root").innerHTML = `
-    ${Nav()} ${Main()} ${Footer()}`;
-    mySlideshow();
+    ${Nav(state.links)} ${Main(st)} ${Footer()} mySlideshow();`;
+    router.updatePageLinks();
 }
 
-render();
+render(state.Home);
 
 
 // Burger Functionality
@@ -82,3 +93,13 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+// handle form submission
+document.querySelector("form").addEventListener("submit", event => {
+  event.preventDefault();
+  Array.from(event.target.elements).forEach(el => {
+      console.log("Input Type: ", el.type);
+      console.log("Name: ", el.name);
+      console.log("Value: ", el.value);
+  });
+});

@@ -1,5 +1,6 @@
 import html from "html-literal";
-export default (st) => html `<!-- <main>
+export default st => html`
+  <!-- <main>
 <section class="hero">
     <h2>Meals Simplified.</h2>
     <h3>Begin enjoying your meals more with Mealtime</h3>
@@ -37,4 +38,5 @@ export default (st) => html `<!-- <main>
         </li>
     </ul>
 </div>
-</footer>  -->`;
+</footer>  -->
+`;

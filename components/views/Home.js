@@ -1,6 +1,13 @@
 import html from "html-literal";
-
-export default (st) => html `<main>
+import apple from "/icon/apple-brands.svg";
+import googlePlay from "/icon/google-play-brands.svg";
+import checkmark from "/icon/check-circle-regular.svg";
+import tasty from "/icon/drumstick-bite-solid.svg";
+import full from "/icon/battery-full-solid.svg";
+import omnivore from "/images/ala--lHZUkiWM74-unsplash.jpg";
+import veggie from "/images/megan-thomas-xMh_ww8HN_Q-unsplash.jpg";
+import meattie from "/images/jon-tyson-kctt4tL1dkE-unsplash.jpg";
+export default (st) => html`<main>
 <section class="hero flex">
     <h2>Meals Simplified.</h2>
     <h3>Begin enjoying your meals more with Mealtime</h3>

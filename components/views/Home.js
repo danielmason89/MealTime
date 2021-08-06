@@ -7,7 +7,7 @@ import full from "/icon/battery-full-solid.svg";
 import omnivore from "/images/ala--lHZUkiWM74-unsplash.jpg";
 import veggie from "/images/megan-thomas-xMh_ww8HN_Q-unsplash.jpg";
 import meattie from "/images/jon-tyson-kctt4tL1dkE-unsplash.jpg";
-export default (st) => html`<main>
+export default st => html`<main>
 <section class="hero flex">
     <h2>Meals Simplified.</h2>
     <h3>Begin enjoying your meals more with Mealtime</h3>

@@ -1,3 +1,4 @@
 import * as views from "./views";
-export default st => `${views[st.views](st)}
+export default st => `
+${views[st.view](st)}
 `;

@@ -104,6 +104,7 @@ nav ul {
   text-align: center;
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 10rem;
 }
 
 .button1,
@@ -163,6 +164,38 @@ nav ul {
   display: none;
 }
 
+/* Features */
+
+.features {
+  margin: 19rem 0rem 10rem 0rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#feature {
+  display: flex;
+}
+
+.feature-container {
+  display: flex;
+  flex-flow: column wrap;
+  margin: 8rem 6rem;
+}
+
+.feature-svg {
+  margin: 4% 40%;
+}
+
+.feature-title,
+.feature-text {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Food Section */
 
 #food {
@@ -174,7 +207,7 @@ nav ul {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 9rem 5rem;
+  padding: 2rem 5rem 10rem 5rem;
   background: linear-gradient(black, 50%, transparent),
     url("/images/edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg");
   text-align: left;
@@ -200,32 +233,10 @@ nav ul {
   -webkit-text-fill-color: transparent;
 }
 
-/* Features */
-#features {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.feature-container {
-  margin: 4rem;
-}
-
-.feature-svg {
-  margin: 5rem 0rem;
-  padding: 5% 40%;
-}
-
-.feature-title,
-.feature-text {
-  font-size: 1.5rem;
-  text-align: center;
-}
-
 /* Recipes Section */
 
-.recipes-header {
+.diets-header {
+  display: flex;
   text-align: center;
   margin-top: 5rem;
 }

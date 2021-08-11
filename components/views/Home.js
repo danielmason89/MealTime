@@ -7,15 +7,45 @@ import full from "/icon/battery-full-solid.svg";
 import omnivore from "/images/ala--lHZUkiWM74-unsplash.jpg";
 import veggie from "/images/megan-thomas-xMh_ww8HN_Q-unsplash.jpg";
 import meattie from "/images/jon-tyson-kctt4tL1dkE-unsplash.jpg";
-export default st => html`<main>
+export default () => html`
+<main>
+
 <section class="hero flex">
     <h2>Meals Simplified.</h2>
-    <h3>Begin enjoying your meals more with Mealtime</h3>
+    <h3>Begin enjoying your time more with Mealtime</h3>
     <div id="btn-container">
     <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" />Download</button>
     <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" />Download</button>
     </div>
+</section>
 
+<section class="features">
+    <header>
+    <h2>A Time Saving, Meal-preparing Platform</h2>
+    </header>
+    <div id= "feature">
+        <figure class="feature-container">
+            <img class="feature-svg"  src="${checkmark}" alt="checkmark" >
+        <figcaption class= "feature-title feature-text">
+            <h3 class="feature-title">Easy to Navigate.</h3>
+            <p class="feature-text">So easy to use, you'll trust your child to choose</p>
+        </figcaption>
+        </figure>
+        <figure class="feature-container">
+        <img class="feature-svg" src="${tasty}" alt="tasty" >
+        <figcaption>
+            <h3 class="feature-title">Humble & Tasty recipes.</h3>
+            <p class="feature-text">We take the effort to showcase everyday meals</p>
+        </figcaption>
+        </figure>
+        <figure class="feature-container">
+        <img class="feature-svg" src="${full}" alt="feeling-full" >
+        <figcaption>
+        <h3 class="feature-title">Guaranteed to feel full.</h3>
+        <p class="feature-text">Spend time better, feeling nourished to do other things</p>
+        </figcaption>
+        </figure>
+        </div>
 </section>
 
 <section id="food">
@@ -25,28 +55,42 @@ export default st => html`<main>
     </header>
 </section >
 
-<section id="features">
-        <div class="feature-container">
-            <img class="feature-svg"  src="${checkmark}" alt="checkmark" >
-            <h3 class="feature-title">Easy to Navigate.</h3>
-            <p class="feature-text">So easy to use, you'll trust your child to choose</p>
+<section id="diets">
+    <header class="diets-header">
+
+    </header>
+    <div class="carousel">
+        <div class="carouselItem">
+        <img src="${veggie}"/>
         </div>
-        <div class="feature-container">
-        <img class="feature-svg" src="${tasty}" alt="tasty" >
-            <h3 class="feature-title">Humble & Tasty recipes.</h3>
-            <p class="feature-text">We take the effort to showcase everyday meals</p>
+
+        <div class="carouselItem">
+        <img src="${meattie}"/>
         </div>
-        <div class="feature-container">
-        <img class="feature-svg" src="${full}" alt="feeling-full" >
-            <h3 class="feature-title">Guaranteed to feel full.</h3>
-            <p class="feature-text">Spend time better, feeling nourished to do other things</p>
+
+        <div class="carouselItem">
+        <img src="${omnivore}"/>
         </div>
+
+
+
+
+    </div>
 </section>
 
 
-<section id="recipes">
-    <header class="recipes-header">
-       <h2>A Time Saving, Meal-preparing Platform</h2>
+
+
+
+
+
+
+
+
+
+<section id="diets">
+    <header class="diets-header">
+
     </header>
   <!-- Slideshow container -->
   <div class="slideshow-container">
@@ -92,9 +136,9 @@ style="width:100%">
 
 
 <section id="cta">
-<h3>Find a way to get time back from the Kitchen.</h3>
+<h3>Discover ways to get time back from the Kitchen.</h3>
 <div id="btn-container">
-    <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" /> Download</button>
-    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" /> Download</button>
+    <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" />Download</button>
+    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" />Download</button>
 </section>
 </main>`;

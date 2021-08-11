@@ -23,28 +23,45 @@ function render(st = state.Home) {
   addEventListener(st);
   router.updatePageLinks();
 }
-
 render(state.Home);
-
-// Burger Functionality
-const nav = document.querySelector(".nav-links");
-const burger = document.querySelector(".burger");
-const links = nav.querySelectorAll("a");
-
-burger.addEventListener("click", () => {
-  nav.classList.toggle("nav-open");
-  burger.classList.toggle("toggle");
-});
-
-links.forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.toggle("nav-open");
-    burger.classList.toggle("toggle");
-  });
-});
 
 // Slide show functionality
 function addEventListener(st) {
+  // Burger Functionality
+  const nav = document.querySelector(".nav-links");
+  const burger = document.querySelector(".burger");
+  const links = nav.querySelectorAll("a");
+
+  burger.addEventListener("click", () => {
+    nav.classList.toggle("nav-open");
+    burger.classList.toggle("toggle");
+  });
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+      burger.classList.toggle("toggle");
+    });
+  });
+
+  // Navbar transition
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-100px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  if (st.view === "Contact") {
+    let contactLink = document.querySelector('[title = "Contact"]');
+    console.log(contactLink);
+    contactLink.style.display = "none";
+    contactLink.removeChild(contact);
+  }
   if (st.view === "Home") {
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -89,15 +106,3 @@ function addEventListener(st) {
     }
   }
 }
-
-// Navbar transition
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-100px";
-  }
-  prevScrollpos = currentScrollPos;
-};

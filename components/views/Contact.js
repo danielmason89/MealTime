@@ -2,7 +2,10 @@ import html from "html-literal";
 
 export default () => html`
   <main>
-    <section class="form-section">
+    <section id="contact">
+      <div class="form-header">
+        <h2>Stay in Touch.</h2>
+      </div>
       <form action="https://formspree.io/f/xwkangwe" method="POST">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" required />

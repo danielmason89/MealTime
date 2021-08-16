@@ -56,89 +56,39 @@ export default () => html`
 </section >
 
 <section id="diets">
-    <header class="diets-header">
-
-    </header>
-    <div class="carousel">
-        <div class="carouselItem">
+    <div class="carousel slideshow-container">
+        <div class="carouselItem carouselItemVisible">
+        <h2 class="text">Vegan. The best and brightest to leave you feeling better.</h2>
         <img src="${veggie}"/>
+        <p class="text">Healthy Tomorrow</p>
         </div>
 
         <div class="carouselItem">
+        <h2 class="text">Protein-focus. Protein orientated meals, to help from workout to workout</h2>
         <img src="${meattie}"/>
+        <p class="text">Beefier Tomorrow</p>
         </div>
 
         <div class="carouselItem">
+        <h2 class="text">The best of both world. get your veggie with that protein</h2>
         <img src="${omnivore}"/>
+        <p class="text">Omni-conscious</p>
         </div>
 
-
-
-
+        <div class="carouselActions">
+            <button id="carouselBtnPrev" class="prev" aria-label="previous-slide"><</button>
+            <button id="carouselBtnNex" class="next" aria-label="next-slide">></button>
+        </div>
     </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-<section id="diets">
-    <header class="diets-header">
-
-    </header>
-  <!-- Slideshow container -->
-  <div class="slideshow-container">
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-<div class="numbertext"></div>
-<p>Healthy Tomorrow</p>
-    <img class="diet" src="${veggie}">
-    <div class="text">Vegan. We've got the best and brightest to leave you feeling better about what your eating.</div>
-  </div>
-
-  <div class="mySlides fade">
-   
-<div class="numbertext"><p>Beefier Tomorrow</p></div>
-    <img class="diet" src="${meattie}"
-style="width:100%">
-    <div class="text">Protein-focus. Protein orientated meals, to help from workout to workout</div>
-  </div>
-  <div class="mySlides fade">
-   
-<figure class="numbertext"><p>Omnivore</p></figure>
-    <img class="diet" src="${omnivore}">
-    <h1 class="text" style="color:red;">The best of both world. get your veggie with that protein</h1>
-  </div>
-  <!-- Next and previous
-  buttons -->
-  <a class="prev">❮</a>
- 
-<a class="next">❯</a>
-</div>
-<br>
-
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-
-  <span class="dot" onclick="currentSlide(2)"></span>
- 
-<span class="dot" onclick="currentSlide(3)"></span>
-</div>
-</section>
-
-
-
 <section id="cta">
-<h3>Discover ways to get time back from the Kitchen.</h3>
+    <header class="cta-header">
+    <h3>Discover ways to get time back from the Kitchen.</h3>
+    </header>
 <div id="btn-container">
     <button class="button1"><img id="button-image" src="${apple}" alt="apple-app-icon" />Download</button>
-    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" />Download</button>
+    <button class="button2"><img id="button-image" src="${googlePlay}" alt="google-play-icon" />
+    Download</button>
 </section>
 </main>`;

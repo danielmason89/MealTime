@@ -4,6 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "watch": "nodemon --watch ./server -e js ./server/index.js",
         "parcel-build": "parcel build index.html && cp _redirects ./dist/",
         "serve": "parcel index.html"
     },
@@ -14,6 +15,7 @@
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.3.1",
+        "nodemon": "^2.0.12",
         "prettier": "1.19.1",
         "stylelint": "^13.11.0",
         "stylelint-config-prettier": "^6.0.0",
@@ -23,6 +25,8 @@
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
+        "axios": "^0.21.1",
+        "dotenv": "^10.0.0",
         "html-literal": "^1.1.0",
         "jshint": "^2.13.0",
         "lodash": "^4.17.21",

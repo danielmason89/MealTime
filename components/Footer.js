@@ -5,7 +5,7 @@ import instagram from "../icon/instagram.svg";
 export default () => html`
   <footer>
     <div class="footer-wrapper">
-      <h5><a href="#home">Mealtime</a>&copy;2021</h5>
+      <h5><a href="/Home" data-navigo>Mealtime</a>&copy;2021</h5>
       <ul>
         <li>
           <a href="#" title="twitter-social-media"

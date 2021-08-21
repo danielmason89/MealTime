@@ -7,14 +7,7 @@ import axios from "axios";
 
 const router = new Navigo(window.location.origin);
 
-router
-  .on({
-    ":page": params => render(state[capitalize(params.page)]),
-    "/": () => render(state.Home)
-  })
-  .resolve();
 //import slides from "./lib/functions/slideShow";
-
 function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
     ${Nav(state.Links)}
@@ -148,3 +141,10 @@ function addEventListener(st) {
 //     Authorization: `token ${YOUR_GH_TOKEN}`;
 //   }
 // }
+
+router
+  .on({
+    ":page": params => render(state[capitalize(params.page)]),
+    "/": () => render(state.Home)
+  })
+  .resolve();

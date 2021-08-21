@@ -42,15 +42,11 @@ const recipesRoute = require("./routers/Recipes");
 app.use(cors);
 app.use(express.json());
 app.use(logging);
-app.use("/Recipes", recipesRoute);
+app.use(recipesRoute);
 
 // Configuring express instance
 app.get("/status", (request, response) => {
   response.send(JSON.stringify({ message: "Service healthy" }));
-});
-
-app.get("/Recipes", (request, response) => {
-  response.send();
 });
 
 app

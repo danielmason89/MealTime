@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { mainModule } = require("process");
 
-const RecipesSchema = mongoose.SChema({
+const RecipesSchema = mongoose.Schema({
   meal: { type: String },
   time: { type: Number },
   diet: { type: String }

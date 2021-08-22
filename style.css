@@ -424,6 +424,26 @@ footer ul {
   text-align: center;
 }
 
+#meal {
+  font-size: 1.2em;
+  height: auto;
+  width: 92.5%;
+  margin: auto;
+}
+
+#meal tbody {
+  width: 100%;
+}
+
+#pizzas th {
+  text-align: left;
+}
+
+#pizzas td,
+th {
+  width: 25%;
+}
+
 @media screen and (max-width: 900px) {
   /* burger thing */
   .burger {

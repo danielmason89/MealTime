@@ -362,50 +362,52 @@ footer ul {
 
 /* Contact Page */
 #contact {
-  min-height: 90vh;
+  min-height: vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
-  background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  flex-flow: column wrap;
+}
+
+.form-header {
+  padding: 15rem 4rem 4rem 4rem;
 }
 
 .form-wrapper {
-  background: rgba(19, 28, 39, 0.8);
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+  background: rgba(13, 34, 27, 0.8);
   width: 60%;
   color: #fffffa;
   border-radius: 20px;
 }
 
-.form-header {
-  text-align: center;
-  padding: 4rem;
-}
-
 .name-form,
-.email-form {
+.email-form,
+.message-form {
+  margin-top: 1rem;
   padding: 3rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .form-wrapper label {
-  margin: 0rem 3rem;
+  margin: 2rem 3rem;
 }
-
-.form-wrapper button {
-  width: 100%;
-  padding: 2rem;
-  margin-top: 8rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
 .form-wrapper input {
   padding: 1rem 3rem;
 }
 
+.form-wrapper button {
+  width: 95%;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* About Page */
 #about {
   min-height: 100vh;
   margin-top: 0rem;
@@ -424,11 +426,12 @@ footer ul {
   text-align: center;
 }
 
+/* Recipes Page */
 #meal {
+  margin-top: 10rem;
   font-size: 1.2em;
   height: auto;
   width: 92.5%;
-  margin: auto;
 }
 
 #meal tbody {
@@ -439,10 +442,10 @@ footer ul {
   text-align: left;
 }
 
-#pizzas td,
+/* #pizzas td,
 th {
   width: 25%;
-}
+} */
 
 @media screen and (max-width: 900px) {
   /* burger thing */

@@ -4,8 +4,8 @@ export default st =>
   html`
     <main>
       <form id="mealTime" method="POST" action="">
-        <h2>Choose a Meal</h2>
         <div>
+          <h2>Choose a Meal</h2>
           <label for="meal">Meal:</label>
           <select id="meal" name="meal">
             <option value="">Select a Meal</option>

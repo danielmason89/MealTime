@@ -3,10 +3,10 @@ import html from "html-literal";
 export default st =>
   html`
     <main>
+      <h2>Choose a Meal</h2>
       <form id="mealTime" method="POST" action="">
         <div>
-          <h2>Choose a Meal</h2>
-          <label for="meal">Meal:</label>
+          <label for="meal">Meal:${st.post}</label>
           <select id="meal" name="meal">
             <option value="">Select a Meal</option>
             <option value="tacos">Tacos</option>

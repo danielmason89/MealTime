@@ -4,6 +4,7 @@ import * as state from "/store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
+const API_KEY = process.env.API_KEY;
 
 const router = new Navigo(window.location.origin);
 
@@ -19,7 +20,6 @@ function render(st = state.Home) {
 }
 render(state.Home);
 
-// Slide show functionality
 function addEventListener(st) {
   // Burger Functionality
   const nav = document.querySelector(".nav-links");
@@ -38,7 +38,7 @@ function addEventListener(st) {
     });
   });
 
-  // Navbar transition
+  // Navbar transition functionality
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
@@ -50,46 +50,61 @@ function addEventListener(st) {
     prevScrollpos = currentScrollPos;
   };
 
-  // Slide show
-  let slidePosition = 0;
-  const slides = document.getElementsByClassName("carouselItem");
-  const totalSlides = slides.length;
+  // Slide show functionality
+  if (st.view === "Home") {
+    let slidePosition = 0;
+    const slides = document.getElementsByClassName("carouselItem");
+    const totalSlides = slides.length;
 
-  document
-    .getElementById("carouselBtnNex")
-    .addEventListener("click", function() {
-      moveToNexSlide();
-    });
+    const updateSlidePosition = () => {
+      for (let slide of slides) {
+        slide.classList.remove("carouselItemVisible");
+        slide.classList.add("carouselItemHidden");
+      }
+      slides[slidePosition].classList.add("carouselItemVisible");
+    };
 
-  document
-    .getElementById("carouselBtnPrev")
-    .addEventListener("click", function() {
-      moveToPrevSlide();
-    });
+    const moveToPrevSlide = () => {
+      if (slidePosition === 0) {
+        slidePosition = totalSlides - 1;
+      } else {
+        slidePosition--;
+      }
+      updateSlidePosition();
+    };
 
-  function updateSlidePosition() {
-    for (let slide of slides) {
-      slide.classList.remove("carouselItemVisible");
-      slide.classList.add("carouselItemHidden");
-    }
-    slides[slidePosition].classList.add("carouselItemVisible");
+    const moveToNexSlide = () => {
+      if (slidePosition === totalSlides - 1) {
+        slidePosition = 0;
+      } else {
+        slidePosition++;
+      }
+      updateSlidePosition();
+    };
+
+    document
+      .getElementById("carouselBtnNex")
+      .addEventListener("click", function() {
+        moveToNexSlide();
+      });
+
+    document
+      .getElementById("carouselBtnPrev")
+      .addEventListener("click", function() {
+        moveToPrevSlide();
+      });
   }
 
-  function moveToNexSlide() {
-    if (slidePosition === totalSlides - 1) {
-      slidePosition = 0;
-    } else {
-      slidePosition++;
-    }
-    updateSlidePosition();
-  }
-  function moveToPrevSlide() {
-    if (slidePosition === 0) {
-      slidePosition = totalSlides - 1;
-    } else {
-      slidePosition--;
-    }
-    updateSlidePosition();
+  if (st.view === "Recipes") {
+    axios
+      .get(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts`
+      )
+      .then(response => {
+        state.Recipes.post = {};
+        state.Recipes.post.data = response.data.results[0].spoonacularSourceUrl;
+        console.log("data from store", state.Recipes.post.data);
+      });
   }
 }
 
@@ -127,20 +142,6 @@ function addEventListener(st) {
 // });
 
 // Api request
-// axios
-//   .get(`https://api.github.com/users/${YOUR_GITHUB_USERNAME}/repos`, {
-//     headers: {
-//       Authorization: `token ${YOUR_GH_TOKEN}`,
-//     },
-//   })
-//   .then((response) => console.log(response.data));
-
-// Api endpoint
-// {
-//   headers: {
-//     Authorization: `token ${YOUR_GH_TOKEN}`;
-//   }
-// }
 
 router
   .on({

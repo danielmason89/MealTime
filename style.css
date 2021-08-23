@@ -362,7 +362,7 @@ footer ul {
 
 /* Contact Page */
 #contact {
-  min-height: vh;
+  min-height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
   display: flex;
   align-items: center;
@@ -409,9 +409,9 @@ footer ul {
 
 /* About Page */
 #about {
-  min-height: 100vh;
+  min-height: 95vh;
   margin-top: 0rem;
-  background: linear-gradient(to bottom, #fffffa, 20%, transparent),
+  background-image: linear-gradient(to top, #fffffa, 20%, transparent),
     url("/images/joseph-gonzalez-QaGDmf5tMiE-unsplash.jpg");
   background-size: cover;
   background-position: center;

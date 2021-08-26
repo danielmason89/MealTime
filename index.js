@@ -95,6 +95,7 @@ function addEventListener(st) {
       });
   }
 
+  // Spoontacular API
   if (st.view === "Recipes") {
     axios
       .get(

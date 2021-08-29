@@ -360,8 +360,9 @@ footer ul {
   align-items: center;
 }
 
-/* Contact Page */
-#contact {
+/* Contact Page & Recipes Page Kinda...*/
+#contact,
+#recipes {
   min-height: 90vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent);
   display: flex;
@@ -378,7 +379,7 @@ footer ul {
   align-items: center;
   flex-flow: column wrap;
   background: rgba(13, 34, 27, 0.8);
-  width: 60%;
+  width: auto;
   color: #fffffa;
   border-radius: 20px;
 }
@@ -392,17 +393,26 @@ footer ul {
   align-items: center;
 }
 
+.meal-form,
+.time-form,
+.diet-form {
+  margin-top: 1rem;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+}
+
 .form-wrapper label {
   margin: 2rem 3rem;
 }
 .form-wrapper input {
-  padding: 1rem 3rem;
+  padding: 1rem 6rem;
 }
 
 .form-wrapper button {
-  width: 95%;
+  width: 50%;
   padding: 2rem;
-  margin-top: 4rem;
+  margin: 4rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }

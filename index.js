@@ -4,7 +4,7 @@ import * as state from "/store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-const API_KEY = process.env.API_KEY;
+import "./env";
 
 const router = new Navigo(window.location.origin);
 
@@ -40,7 +40,7 @@ function addEventListener(st) {
 
   // Navbar transition functionality
   var prevScrollpos = window.pageYOffset;
-  window.onscroll = function() {
+  window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("navbar").style.top = "0";
@@ -84,13 +84,13 @@ function addEventListener(st) {
 
     document
       .getElementById("carouselBtnNex")
-      .addEventListener("click", function() {
+      .addEventListener("click", function () {
         moveToNexSlide();
       });
 
     document
       .getElementById("carouselBtnPrev")
-      .addEventListener("click", function() {
+      .addEventListener("click", function () {
         moveToPrevSlide();
       });
   }
@@ -99,7 +99,7 @@ function addEventListener(st) {
   if (st.view === "Recipes") {
     axios
       .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts`
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${RECIPES_API_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts`
       )
       .then(response => {
         state.Recipes.post = {};
@@ -122,31 +122,13 @@ function addEventListener(st) {
 //           done();
 //         });
 //       });
-//     }
-
-//     if (page === "Home") {
-//       axios
-//         .get(
-//           `https://api.openweathermap.org/data/2.5/weather?appid=fbb30b5d6cf8e164ed522e5082b49064&q=st.%20louis`
-//         )
-//         .then(response => {
-//           state.Home.weather = {};
-//           state.Home.weather.city = response.data.name;
-//           state.Home.weather.temp = response.data.main.temp;
-//           state.Home.weather.feelsLike = response.data.main.feels_like;
-//           state.Home.weather.description = response.data.weather[0].main;
-//           done();
-//         })
-//         .catch(err => console.log(err));
-//     }
-//   }
-// });
+//     };
 
 // Api request
 
 router
   .on({
-    ":page": params => render(state[capitalize(params.page)]),
-    "/": () => render(state.Home)
+    "/": () => render(state.Home),
+    ":page": params => render(state[capitalize(params.page)])
   })
   .resolve();

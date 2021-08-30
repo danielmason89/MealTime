@@ -32,7 +32,10 @@ export default st =>
               <option value="noFish">Pescetarian</option>
             </select>
           </div>
-          <input class="form-wrapper button" type="submit" name="submit" value="Submit Choice" />
+          <button href="https://www.foodista.com/recipe/2TTY2HPQ/kks-fish-tacos" class="form-wrapper button" type="submit"
+            name="submit">
+            Send
+          </button>
         </form>
       </section>
     </main>

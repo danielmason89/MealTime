@@ -2,28 +2,34 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
-const recipes = require("./routers/Recipes");
 
 dotenv.config();
-
+const recipes = require("./routers/recipes");
+// Import ^^^^^^
 // Express app
 const app = express();
 
 // Database
-mongoose.connect(process.env.MONGODB, {
+mongoose.connect("mongodb://localhost/recipes", {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
 const db = mongoose.connection;
-
 db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", () => console.log("Successfully opened connection to Mongo!"));
+db.once("open", () =>
+  console.log("Successfully opened connection to Mongodb!")
+);
 
 // Defining middleware functions
 const logging = (request, response, next) => {
   console.log(` ${request.method} ${response.url} ${Date.now()} `);
   next();
 };
+
+// using the middleware
+app.use(express.json());
+app.use(logging);
+app.use(recipes);
 
 // CORS Middleware
 const cors = (req, res, next) => {
@@ -42,25 +48,29 @@ const cors = (req, res, next) => {
 
 // using the middleware
 app.use(cors);
-app.use(express.json());
-app.use(logging);
 
 app.use(morgan("dev"));
-app.use("/recipes", recipes);
 
-// Routes, Configuring express instance
+// Configuring express instance
+app.get("/status", (request, response) => {
+  response.send(JSON.stringify({ message: "Service healthy" }));
+});
+app.listen(4040, () => console.log("Listening on port 4040"));
+
 app
-  .route("/")
+  .route("/test")
   .get((req, res) => {
     res.status(200).json({ message: "I love coffee" });
   })
   .post((req, res) => {
     res.send("I love coffee too");
-  })
-  .post((request, response) => {
-    response.json(request.body);
   });
 
 // Starting server, executing the express (this must be last)
 const port = process.env.PORT || 1989;
-app.listen(port, () => console.log(`App running on port ${port}...`));
+app.listen(port, () => console.log(`App running on port ${port}`));
+
+// process.env.MONGODB, {
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true
+// }

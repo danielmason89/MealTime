@@ -40,7 +40,7 @@ function addEventListener(st) {
 
   // Navbar transition functionality
   var prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
+  window.onscroll = () => {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       document.getElementById("navbar").style.top = "0";
@@ -82,17 +82,13 @@ function addEventListener(st) {
       updateSlidePosition();
     };
 
-    document
-      .getElementById("carouselBtnNex")
-      .addEventListener("click", function () {
-        moveToNexSlide();
-      });
+    document.getElementById("carouselBtnNex").addEventListener("click", () => {
+      moveToNexSlide();
+    });
 
-    document
-      .getElementById("carouselBtnPrev")
-      .addEventListener("click", function () {
-        moveToPrevSlide();
-      });
+    document.getElementById("carouselBtnPrev").addEventListener("click", () => {
+      moveToPrevSlide();
+    });
   }
 
   // Spoontacular API
@@ -105,26 +101,10 @@ function addEventListener(st) {
         state.Recipes.post = {};
         state.Recipes.post.data = response.data.results[0].spoonacularSourceUrl;
         console.log("data from store", state.Recipes.post.data);
+        router.navigate("/");
       });
   }
 }
-
-// Rooter hooks, unsure where to use yet...
-// router.hooks({
-//   before: (done, params) => {
-//     const page = params && params.hasOwnProperty("page") ? capitalize(params.page) : "Home";
-
-//     if (page === "Blog") {
-//       state.Blog.posts = [];
-//       axios.get("https://jsonplaceholder.typicode.com/posts").then(response => {
-//         response.data.forEach(post => {
-//           state.Blog.posts.push(post);
-//           done();
-//         });
-//       });
-//     };
-
-// Api request
 
 router
   .on({

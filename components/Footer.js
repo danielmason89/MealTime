@@ -8,19 +8,13 @@ export default () => html`
       <h5><a href="/Home" data-navigo>Mealtime&copy;2021</a></h5>
       <ul>
         <li>
-          <a href="#" title="twitter-social-media"
-            ><img src="${twitter}" alt="twitter-social-media"
-          /></a>
+          <a href="#" title="twitter-social-media"><img src="${twitter}" alt="twitter-social-media" /></a>
         </li>
         <li>
-          <a href="#" title="facebook-social-media"
-            ><img src="${facebook}" alt="facebook-social-media"
-          /></a>
+          <a href="#" title="facebook-social-media"><img src="${facebook}" alt="facebook-social-media" /></a>
         </li>
         <li>
-          <a href="#" title="instagram-social-media"
-            ><img src="${instagram}" alt="instagram-social-media"
-          /></a>
+          <a href="#" title="instagram-social-media"><img src="${instagram}" alt="instagram-social-media" /></a>
         </li>
       </ul>
     </div>

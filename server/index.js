@@ -10,7 +10,7 @@ const recipes = require("./routers/recipes");
 const app = express();
 
 // Database
-mongoose.connect("mongodb://localhost/recipes", {
+mongoose.connect(process.env.MONGODB, {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
@@ -69,8 +69,3 @@ app
 // Starting server, executing the express (this must be last)
 const port = process.env.PORT || 1989;
 app.listen(port, () => console.log(`App running on port ${port}`));
-
-// process.env.MONGODB, {
-//   useUnifiedTopology: true,
-//   useNewUrlParser: true
-// }

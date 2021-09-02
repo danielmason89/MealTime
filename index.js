@@ -1,11 +1,14 @@
 // import food from "./icon/mealTime.svg";
 import { Nav, Main, Footer } from "./components";
 import * as state from "/store";
+
 import Navigo from "navigo";
 import { capitalize } from "lodash";
-import axios from "axios";
 import "./env";
+import axios from "axios";
+import dotenv from "dotenv";
 
+dotenv.config();
 const router = new Navigo(window.location.origin);
 
 //import slides from "./lib/functions/slideShow";
@@ -15,8 +18,8 @@ function render(st = state.Home) {
     ${Main(st)}
     ${Footer()}
     `;
-  addEventListener(st);
   router.updatePageLinks();
+  addEventListener(st);
 }
 
 function addEventListener(st) {
@@ -92,39 +95,79 @@ function addEventListener(st) {
 
   // Spoontacular API
   if (st.view === "Recipes") {
-    document.querySelector("form").addEventListener("submit", event => {
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", event => {
       event.preventDefault();
+      form.style.display = "none";
       const inputList = event.target.elements;
 
-      const recipes = [];
-      for (let input of inputList.recipes) {
-        if (input.checked) {
-          recipes.push(input.value);
-        }
-      }
-
-      const requestData = {
+      const mealTimeData = {
         meal: inputList.meal.value,
-        prepTime: inputList.prepTime.value,
+        time: inputList.time.value,
         diet: inputList.diet.value
       };
 
       axios
-        .post(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts`, requestData)
+        .post(`${process.env.API}/recipes`, mealTimeData)
         .then(response => {
-          state.Recipes.post = {};
-          console.log(response.data.results[0].sourceUrl);
-          state.Recipes.post.data = response.data.results[0].sourceUrl;
-          console.log("data from store", state.Recipes.post.data);
+          console.log("response", response.data);
+          // console.log("state", state.Recipes);
+          state.Recipes.recipes.push(response.data);
+          router.navigate("/Recipes");
+
+          event.preventDefault();
         })
         .catch(error => {
           console.log("It puked", error);
         });
-    })
+      // console.log(response.data);
+    });
 
+    axios
+      .get(
+        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/`
+      )
+      .then(response => {
+        st.Recipes.post = {};
+        st.Recipes.post.data = response.data.results[0].sourceUrl;
+      })
+      .catch(error => {
+        console.log("It puked", error);
+      });
   }
 }
+
+// router.hooks({
+//   before: (done, params) => {
+//     const page =
+//       params && params.hasOwnProperty("page")
+//         ? capitalize(params.page)
+//         : "Recipes";
+
+//     switch (page) {
+//       case "Recipe":
+//         axios
+//           .get(
+//             `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts/recipes`
+//           )
+//           .then(response => {
+//             state[page].recipes = response.data;
+//             console.log(response.data);
+//             done();
+//             // console.log(response, state.Home.weather);
+//           })
+//           .catch(error => {
+//             console.log("Need Instructions Please", error);
+//             done();
+//           });
+//         break;
+
+//       default:
+//         done();
+//     }
+//   }
+// });
 
 router
   .on({

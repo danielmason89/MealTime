@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const recipeSchema = new mongoose.Schema({
   meal: String,
-  prepTime: String,
+  time: String,
   diet: String
 });
 

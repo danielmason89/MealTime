@@ -1,8 +1,9 @@
 const { Router } = require("express");
 const recipe = require("../models/recipe");
+
 const router = Router();
 
-// Create a Record in MongoDB
+// Create Record in MongoDB
 router.post("/recipes", (request, response) => {
   const newRecipe = new recipe.model(request.body);
   newRecipe.save((err, recipe) => {
@@ -10,18 +11,47 @@ router.post("/recipes", (request, response) => {
   });
 });
 
-router
-  .route("/recipes/:name")
-  .get((req, res) => {
-    const name = req.params.name;
-    res.status(200).json({ message: `I would love ${name} to buy me coffee.` });
-  })
-  .post((req, res) => {
-    res.send("I love coffee too");
-  })
-  .post((request, response) => {
-    response.json(request.body);
+// Get all recipe records
+router.get("/recipes", (request, response) => {
+  recipe.model.find({}, (error, data) => {
+    if (error) return response.sendStatus(500).json(error);
+    return response.json(data);
   });
+});
 
+// Get a recipe by ID
+router.get("/recipes/:id", (request, response) => {
+  recipe.model.findById(request.params.id, (error, data) => {
+    if (error) return response.sendStatus(500).json(error);
+    return response.json(data);
+  });
+});
+
+// Delete a recipe by ID
+router.delete("/recipes/:id", (request, response) => {
+  recipe.model.findByIdAndRemove(request.params.id, {}, (error, data) => {
+    if (error) return response.sendStatus(500).json(error);
+    return response.json(data);
+  });
+});
+
+// Update a recipe by ID
+router.put("/recipes/:id", (request, response) => {
+  const body = request.body;
+  recipe.model.findByIdAndUpdate(
+    request.params.id,
+    {
+      $set: {
+        meal: body.meal,
+        time: body.time,
+        diet: body.diet
+      }
+    },
+    (error, data) => {
+      if (error) return response.sendStatus(500).json(error);
+      return response.json(request.body);
+    }
+  );
+});
 // don't forget to export the router Object
 module.exports = router;

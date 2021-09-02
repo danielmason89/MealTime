@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 
-dotenv.config();
 const recipes = require("./routers/recipes");
+
+dotenv.config();
 // Import ^^^^^^
 // Express app
 const app = express();
@@ -26,11 +27,6 @@ const logging = (request, response, next) => {
   next();
 };
 
-// using the middleware
-app.use(express.json());
-app.use(logging);
-app.use(recipes);
-
 // CORS Middleware
 const cors = (req, res, next) => {
   res.setHeader(
@@ -48,14 +44,17 @@ const cors = (req, res, next) => {
 
 // using the middleware
 app.use(cors);
+app.use(express.json());
+app.use(logging);
 
+app.use(recipes);
 app.use(morgan("dev"));
 
 // Configuring express instance
 app.get("/status", (request, response) => {
   response.send(JSON.stringify({ message: "Service healthy" }));
 });
-app.listen(4040, () => console.log("Listening on port 4040"));
+app.listen(4040, () => console.log("Listening on port 1989"));
 
 app
   .route("/test")

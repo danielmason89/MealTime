@@ -5,9 +5,9 @@ const router = Router();
 
 // Create Record in MongoDB
 router.post("/recipes", (request, response) => {
-  const newRecipe = new recipe.model(request.body);
-  newRecipe.save((err, recipe) => {
-    return err ? response.sendStatus(500).json(err) : response.json(recipe);
+  // const newRecipe = new recipe.model(request.body);
+  recipe.model.create(request.body, (err, recipe) => {
+    return err ? response.status(500).json(err) : response.json(recipe);
   });
 });
 

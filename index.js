@@ -110,6 +110,20 @@ function addEventListener(st) {
       };
 
       axios
+        .get(
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=${mealTimeData.meal}&diet=${mealTimeData.diet}&maxReadyTime=${inputList.time.value}&addRecipeInformation=true&instructionsRequired/`
+        )
+        .then(response => {
+          console.log(response);
+          state.Recipes.get = {};
+          state.Recipes.get.data = response.data.results[0].sourceUrl;
+          window.location = state.Recipes.get.data;
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+
+      axios
         .post(`${process.env.API}/recipes`, mealTimeData)
         .then(response => {
           console.log("response", response.data);
@@ -118,22 +132,10 @@ function addEventListener(st) {
           router.navigate("/Recipes");
         })
         .catch(error => {
-          console.log("It puked", error);
+          console.log("It", error);
         });
       // console.log(response.data);
     });
-
-    axios
-      .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/`
-      )
-      .then(response => {
-        st.Recipes.get = {};
-        st.Recipes.get.data = response.data.results[0].sourceUrl;
-      })
-      .catch(error => {
-        console.log("It puked", error);
-      });
   }
 }
 

@@ -45,10 +45,10 @@ const cors = (req, res, next) => {
 // using the middleware
 app.use(cors);
 app.use(express.json());
+app.use(morgan("dev"));
 app.use(logging);
 
 app.use(recipes);
-app.use(morgan("dev"));
 
 // Configuring express instance
 app.get("/status", (request, response) => {

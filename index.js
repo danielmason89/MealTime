@@ -101,6 +101,7 @@ function addEventListener(st) {
       event.preventDefault();
       form.style.display = "none";
       const inputList = event.target.elements;
+      console.log("elements", event.target.elements);
 
       const mealTimeData = {
         meal: inputList.meal.value,
@@ -115,8 +116,6 @@ function addEventListener(st) {
           // console.log("state", state.Recipes);
           state.Recipes.recipes.push(response.data);
           router.navigate("/Recipes");
-
-          event.preventDefault();
         })
         .catch(error => {
           console.log("It puked", error);
@@ -129,8 +128,8 @@ function addEventListener(st) {
         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/`
       )
       .then(response => {
-        st.Recipes.post = {};
-        st.Recipes.post.data = response.data.results[0].sourceUrl;
+        st.Recipes.get = {};
+        st.Recipes.get.data = response.data.results[0].sourceUrl;
       })
       .catch(error => {
         console.log("It puked", error);
@@ -138,36 +137,56 @@ function addEventListener(st) {
   }
 }
 
-// router.hooks({
-//   before: (done, params) => {
-//     const page =
-//       params && params.hasOwnProperty("page")
-//         ? capitalize(params.page)
-//         : "Recipes";
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
 
-//     switch (page) {
-//       case "Recipe":
-//         axios
-//           .get(
-//             `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts/recipes`
-//           )
-//           .then(response => {
-//             state[page].recipes = response.data;
-//             console.log(response.data);
-//             done();
-//             // console.log(response, state.Home.weather);
-//           })
-//           .catch(error => {
-//             console.log("Need Instructions Please", error);
-//             done();
-//           });
-//         break;
+    switch (page) {
+      case "Recipe":
+        axios
+          .post(`${process.env.API}/recipes`)
+          .then(response => {
+            console.log("response", response.data);
+            // console.log("state", state.Recipes);
+            state.Recipes.recipes.push(response.data);
+            router.navigate("/Recipes");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
 
-//       default:
-//         done();
-//     }
-//   }
-// });
+      default:
+        done();
+    }
+  }
+
+  // switch (page) {
+  //   case "Recipe":
+  //     axios
+  //       .get(
+  //         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts/recipes`
+  //       )
+  //       .then(response => {
+  //         state[page].recipes = response.data;
+  //         console.log(response.data);
+  //         done();
+  //         // console.log(response, state.Home.weather);
+  //       })
+  //       .catch(error => {
+  //         console.log("Need Instructions Please", error);
+  //         done();
+  //       });
+  //     break;
+
+  //   default:
+  //     done();
+  // }
+});
 
 router
   .on({

@@ -1,4 +1,5 @@
 export default {
   header: "Recipes",
-  view: "Recipes"
+  view: "Recipes",
+  recipes: []
 };

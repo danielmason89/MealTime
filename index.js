@@ -1,11 +1,13 @@
 // import food from "./icon/mealTime.svg";
 import { Nav, Main, Footer } from "./components";
 import * as state from "/store";
+
 import Navigo from "navigo";
 import { capitalize } from "lodash";
 import axios from "axios";
-import "./env";
+import dotenv from "dotenv";
 
+dotenv.config();
 const router = new Navigo(window.location.origin);
 
 //import slides from "./lib/functions/slideShow";
@@ -15,10 +17,9 @@ function render(st = state.Home) {
     ${Main(st)}
     ${Footer()}
     `;
-  addEventListener(st);
   router.updatePageLinks();
+  addEventListener(st);
 }
-render(state.Home);
 
 function addEventListener(st) {
   // Burger Functionality
@@ -93,18 +94,100 @@ function addEventListener(st) {
 
   // Spoontacular API
   if (st.view === "Recipes") {
-    axios
-      .get(
-        `https://api.spoonacular.com/recipes/complexSearch?apiKey=${RECIPES_API_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts`
-      )
-      .then(response => {
-        state.Recipes.post = {};
-        state.Recipes.post.data = response.data.results[0].spoonacularSourceUrl;
-        console.log("data from store", state.Recipes.post.data);
-        router.navigate("/");
-      });
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      form.style.display = "none";
+      const inputList = event.target.elements;
+      console.log("elements", event.target.elements);
+
+      const mealTimeData = {
+        meal: inputList.meal.value,
+        time: inputList.time.value,
+        diet: inputList.diet.value
+      };
+
+      axios
+        .get(
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=${mealTimeData.meal}&diet=${mealTimeData.diet}&maxReadyTime=${inputList.time.value}&addRecipeInformation=true&instructionsRequired/`
+        )
+        .then(response => {
+          console.log(response);
+          state.Recipes.get = {};
+          state.Recipes.get.data = response.data.results[0].sourceUrl;
+          window.location = state.Recipes.get.data;
+        })
+        .catch(error => {
+          console.log("It puked", error);
+        });
+
+      axios
+        .post(`${process.env.API}/recipes`, mealTimeData)
+        .then(response => {
+          console.log("response", response.data);
+          // console.log("state", state.Recipes);
+          state.Recipes.recipes.push(response.data);
+          router.navigate("/Recipes");
+        })
+        .catch(error => {
+          console.log("It", error);
+        });
+      // console.log(response.data);
+    });
   }
 }
+
+router.hooks({
+  before: (done, params) => {
+    const page =
+      params && params.hasOwnProperty("page")
+        ? capitalize(params.page)
+        : "Home";
+
+    switch (page) {
+      case "Recipe":
+        axios
+          .post(`${process.env.API}/recipes`)
+          .then(response => {
+            console.log("response", response.data);
+            // console.log("state", state.Recipes);
+            state.Recipes.recipes.push(response.data);
+            router.navigate("/Recipes");
+          })
+          .catch(error => {
+            console.log("It puked", error);
+            done();
+          });
+        break;
+
+      default:
+        done();
+    }
+  }
+
+  // switch (page) {
+  //   case "Recipe":
+  //     axios
+  //       .get(
+  //         `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=taco&diet=Pescetarian&addRecipeInformation=true&instructionsRequired/posts/recipes`
+  //       )
+  //       .then(response => {
+  //         state[page].recipes = response.data;
+  //         console.log(response.data);
+  //         done();
+  //         // console.log(response, state.Home.weather);
+  //       })
+  //       .catch(error => {
+  //         console.log("Need Instructions Please", error);
+  //         done();
+  //       });
+  //     break;
+
+  //   default:
+  //     done();
+  // }
+});
 
 router
   .on({

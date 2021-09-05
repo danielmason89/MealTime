@@ -1,9 +1,9 @@
 # Savvy Coders Capstone Project: Meal-time
 Capstone Project: Mealtime
 
-Define Audience: My audience is young couples, single parents, young professionals that are either married or single, who either do or do not have children, perferably millennials,  and everyone in-between.
+The audience of this project is young couples, single parents, young professionals that are either married or single, who either do or do not have children, perferably millennials,  and everyone in-between.
 
-Definition statement: I want to create a web application that help millennials and eveyone in-between, cut down on the time it takes to make food, in a convenient and healthy way.
+I would like to create a web application that can help millennials and eveyone in-between, cut down on the time it takes to make food, in a convenient and healthy way.
 
 High level story: The full page web application, Meal-time is a solution to help busy career orientated millennials, and everyone in-between with meal prep time.
 1) This application looks to accomplish this solution by cutting down on the time it takes to make food whether that be for a single person or few people, in a convenient and healthy manner for this project.

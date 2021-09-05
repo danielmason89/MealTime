@@ -9,7 +9,7 @@ export default st =>
         </div>
         <form class="form-wrapper" method="POST" action="" id="myForm">
           <div class="meal-form">
-            <label class="label" for="meal">Meal${st.post}</label>
+            <label class="label" for="meal">Meal</label>
             <select class="input" id="meal" name="meal">
               <option value="">Select a Meal</option>
               <option value="tacos">Taco</option>

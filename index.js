@@ -110,10 +110,9 @@ function addEventListener(st) {
 
       axios
         .get(
-          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.SPOONTACULAR_KEY}&query=${mealTimeData.meal}&diet=${mealTimeData.diet}&maxReadyTime=${inputList.time.value}&addRecipeInformation=true&instructionsRequired/`
+          `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.RECIPES_API_KEY}&query=${mealTimeData.meal}&diet=${mealTimeData.diet}&maxReadyTime=${inputList.time.value}&addRecipeInformation=true&instructionsRequired/`
         )
         .then(response => {
-          console.log(response);
           state.Recipes.get = {};
           state.Recipes.get.data = response.data.results[0].sourceUrl;
           window.location = state.Recipes.get.data;
@@ -125,15 +124,12 @@ function addEventListener(st) {
       axios
         .post(`${process.env.API}/recipes`, mealTimeData)
         .then(response => {
-          console.log("response", response.data);
-          // console.log("state", state.Recipes);
           state.Recipes.recipes.push(response.data);
           router.navigate("/Recipes");
         })
         .catch(error => {
           console.log("It", error);
         });
-      // console.log(response.data);
     });
   }
 }

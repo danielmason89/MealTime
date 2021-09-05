@@ -3,14 +3,15 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
 
-dotenv.config();
 const recipes = require("./routers/recipes");
+
+dotenv.config();
 // Import ^^^^^^
 // Express app
 const app = express();
 
 // Database
-mongoose.connect("mongodb://localhost/recipes", {
+mongoose.connect(process.env.MONGODB, {
   useUnifiedTopology: true,
   useNewUrlParser: true
 });
@@ -25,11 +26,6 @@ const logging = (request, response, next) => {
   console.log(` ${request.method} ${response.url} ${Date.now()} `);
   next();
 };
-
-// using the middleware
-app.use(express.json());
-app.use(logging);
-app.use(recipes);
 
 // CORS Middleware
 const cors = (req, res, next) => {
@@ -48,14 +44,17 @@ const cors = (req, res, next) => {
 
 // using the middleware
 app.use(cors);
-
+app.use(express.json());
 app.use(morgan("dev"));
+app.use(logging);
+
+app.use(recipes);
 
 // Configuring express instance
 app.get("/status", (request, response) => {
   response.send(JSON.stringify({ message: "Service healthy" }));
 });
-app.listen(4040, () => console.log("Listening on port 4040"));
+app.listen(4040, () => console.log("Listening on port 1989"));
 
 app
   .route("/test")
@@ -69,8 +68,3 @@ app
 // Starting server, executing the express (this must be last)
 const port = process.env.PORT || 1989;
 app.listen(port, () => console.log(`App running on port ${port}`));
-
-// process.env.MONGODB, {
-//   useUnifiedTopology: true,
-//   useNewUrlParser: true
-// }

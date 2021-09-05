@@ -140,7 +140,7 @@ nav ul {
 
 /* Hero Section */
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,6 +185,10 @@ nav ul {
   margin: 4% 40%;
 }
 
+.feat-h2 {
+  text-align: center;
+}
+
 .feature-title,
 .feature-text {
   margin-bottom: 1rem;
@@ -196,7 +200,7 @@ nav ul {
 
 /* Food Section */
 #food {
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   padding: 2rem 5rem 10rem 5rem;
   background: linear-gradient(black, 50%, transparent),
@@ -227,8 +231,8 @@ nav ul {
 /* Diets Section */
 
 #diets {
+  min-height: 30vh;
   margin-top: 5rem;
-  min-height: 90vh;
   background: linear-gradient(to top, #44a1a0, transparent);
 }
 
@@ -314,12 +318,13 @@ nav ul {
 
 /* Call to Action Section */
 .cta-header {
+  margin: 15rem 0rem;
   color: #fffffa;
   width: 90%;
 }
 
 #cta {
-  min-height: 90vh;
+  min-height: 84vh;
   background: linear-gradient(to bottom, #44a1a0, transparent);
   background-size: cover;
   background-repeat: no-repeat;
@@ -342,7 +347,7 @@ footer {
   width: 90%;
   margin: auto;
   align-items: center;
-  min-height: 10vh;
+  min-height: 20vh;
   flex-wrap: wrap;
 }
 

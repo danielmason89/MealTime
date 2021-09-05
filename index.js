@@ -4,7 +4,6 @@ import * as state from "/store";
 
 import Navigo from "navigo";
 import { capitalize } from "lodash";
-import "./env";
 import axios from "axios";
 import dotenv from "dotenv";
 

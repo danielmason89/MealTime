@@ -22,7 +22,7 @@ export default () => html`
 
     <section class="features">
         <header>
-            <h2>A Time Saving, Meal-preparing Platform</h2>
+            <h2 class="feat-h2">A Time Saving, Meal-preparing Platform</h2>
         </header>
         <div id="feature">
             <figure class="feature-container">

@@ -115,7 +115,8 @@ function addEventListener(st) {
         .then(response => {
           state.Recipes.get = {};
           state.Recipes.get.data = response.data.results[0].sourceUrl;
-          window.location = state.Recipes.get.data;
+          // window.location = state.Recipes.get.data;
+          window.open(state.Recipes.get.data, "_blank");
         })
         .catch(error => {
           console.log("It puked", error);

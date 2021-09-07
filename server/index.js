@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const morgan = require("morgan");
+// const morgan = require("morgan");
 const dotenv = require("dotenv");
 
 const recipes = require("./routers/recipes");
@@ -45,8 +45,8 @@ const cors = (req, res, next) => {
 // using the middleware
 app.use(cors);
 app.use(express.json());
-app.use(morgan("dev"));
 app.use(logging);
+// app.use(morgan("dev"));
 
 app.use(recipes);
 

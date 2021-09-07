@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 // const morgan = require("morgan");
 const dotenv = require("dotenv");
 
-const recipes = require("./routers/recipes");
+const recipes = require("./routers/Recipes");
 
 dotenv.config();
 // Import ^^^^^^

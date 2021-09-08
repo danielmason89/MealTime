@@ -98,7 +98,7 @@ function addEventListener(st) {
 
     form.addEventListener("submit", event => {
       event.preventDefault();
-      form.style.display = "none";
+      // form.style.display = "none";
       const inputList = event.target.elements;
       console.log("elements", event.target.elements);
 
@@ -131,6 +131,7 @@ function addEventListener(st) {
         .catch(error => {
           console.log("It", error);
         });
+
     });
   }
 }

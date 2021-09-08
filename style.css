@@ -64,7 +64,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  min-width: 90%;
   margin: 0rem 10rem;
   padding: 2rem 0rem;
   min-height: 10vh;
@@ -200,11 +200,14 @@ nav ul {
 
 /* Food Section */
 #food {
-  min-height: 75vh;
+  min-height: 90vh;
   display: flex;
   padding: 2rem 5rem 10rem 5rem;
   background: linear-gradient(black, 50%, transparent),
     url("/images/edgar-castrejon-1SPu0KT-Ejg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   text-align: left;
   font-size: 2rem;
 }
@@ -231,7 +234,7 @@ nav ul {
 /* Diets Section */
 
 #diets {
-  min-height: 30vh;
+  min-height: 80vh;
   margin-top: 5rem;
   background: linear-gradient(to top, #44a1a0, transparent);
 }
@@ -242,7 +245,7 @@ nav ul {
   text-align: center;
   font-size: 2rem;
   line-height: 3;
-  margin-top: 1rem;
+  margin: 10rem 0rem 8rem 0rem;
 }
 
 .slideshow-container {
@@ -251,7 +254,7 @@ nav ul {
 
 .carousel {
   overflow: hidden;
-  max-width: 100rem;
+  min-width: 90rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -280,7 +283,7 @@ nav ul {
 
 .carousel .carouselActions {
   display: flex;
-  width: 100rem;
+  min-width: 60%;
   justify-content: space-between;
   position: absolute;
   top: 50%;

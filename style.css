@@ -65,7 +65,7 @@ nav {
   display: flex;
   justify-content: space-between;
   min-width: 90%;
-  margin: 0rem 10rem;
+  margin: 0rem 3rem;
   padding: 2rem 0rem;
   min-height: 10vh;
   align-items: center;
@@ -429,8 +429,8 @@ footer ul {
 
 /* About Page */
 #about {
-  min-height: 95vh;
-  margin-top: 0rem;
+  min-height: 100vh;
+  margin-bottom: 10rem;
   background-image: linear-gradient(to top, #fffffa, 20%, transparent),
     url("/images/joseph-gonzalez-QaGDmf5tMiE-unsplash.jpg");
   background-size: cover;
@@ -441,10 +441,26 @@ footer ul {
 }
 .about-header {
   text-align: center;
+  margin: 30rem 30rem 10rem 30rem;
+  color:#0D5C63;
+  text-decoration: underline .5rem solid;
 }
 .about-text {
+  color:#0D5C63;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  margin: 5rem 30rem 40rem 30rem;
 }
+
+.about-text p {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 
 @media screen and (max-width: 900px) {
   /* burger thing */

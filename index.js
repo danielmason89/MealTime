@@ -131,7 +131,6 @@ function addEventListener(st) {
         .catch(error => {
           console.log("It", error);
         });
-
     });
   }
 }

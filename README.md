@@ -1,5 +1,5 @@
-# Savvy Coders Capstone Project: Meal-time
-Capstone Project: Mealtime
+# Savvy Coders Capstone Project
+## Mealtime
 
 The audience of this project is young couples, single parents, young professionals that are either married or single, who either do or do not have children, perferably millennials,  and everyone in-between.
 

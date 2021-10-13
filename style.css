@@ -66,7 +66,7 @@ nav {
   justify-content: space-between;
   min-width: 90%;
   margin: 0rem 3rem;
-  padding: 2rem 0rem;
+  padding: 4rem 0rem;
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
@@ -91,6 +91,7 @@ nav ul {
   flex: 1 1 20rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
+  padding: 0rem 2rem;
 }
 
 .nav-links {
@@ -423,7 +424,9 @@ footer ul {
 }
 
 /* Recipes Page */
-#meal, #time, #diet {
+#meal,
+#time,
+#diet {
   font-size: 1.2rem;
 }
 
@@ -442,11 +445,11 @@ footer ul {
 .about-header {
   text-align: center;
   margin: 30rem 30rem 10rem 30rem;
-  color:#0D5C63;
-  text-decoration: underline .5rem solid;
+  color: #0d5c63;
+  text-decoration: underline 0.5rem solid;
 }
 .about-text {
-  color:#0D5C63;
+  color: #0d5c63;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -460,7 +463,6 @@ footer ul {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
 
 @media screen and (max-width: 900px) {
   /* burger thing */

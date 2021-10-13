@@ -64,7 +64,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  min-width: 90%;
+  min-width: 97%;
   margin: 0rem 3rem;
   padding: 4rem 0rem;
   min-height: 10vh;
@@ -91,12 +91,11 @@ nav ul {
   flex: 1 1 20rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
-  padding: 0rem 2rem;
 }
 
 .nav-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex: 1 1 20rem;
 }
 

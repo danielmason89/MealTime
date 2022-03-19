@@ -64,8 +64,7 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  min-width: 97%;
-  margin: 0rem 3rem;
+  width: 100%;
   padding: 2rem 0rem;
   min-height: 10vh;
   align-items: center;
@@ -79,7 +78,7 @@ nav {
 
 nav ul {
   display: flex;
-  flex: 1 1 40rem;
+  flex: 1 1 20rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -88,7 +87,8 @@ nav ul {
 }
 
 #logo {
-  flex: 1 1 20rem;
+  padding-left: 5rem;
+  flex: 2 1 20rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
 }
@@ -96,7 +96,6 @@ nav ul {
 .nav-links {
   display: flex;
   justify-content: space-around;
-  flex: 1 1 20rem;
 }
 
 /* Download Button */
@@ -161,6 +160,7 @@ nav ul {
 .burger,
 .menu-check {
   display: none;
+  margin-right: 2rem;
 }
 
 /* Features */
@@ -178,7 +178,7 @@ nav ul {
 .feature-container {
   display: flex;
   flex-flow: column wrap;
-  margin: 8rem 6rem;
+  margin: 4rem 3rem;
 }
 
 .feature-svg {
@@ -246,6 +246,9 @@ nav ul {
   font-size: 2rem;
   line-height: 3;
   margin: 10rem 0rem 8rem 0rem;
+  @media screen and (max-width: 768px) {
+    font-size: 0.5rem;
+  }
 }
 
 .slideshow-container {
@@ -254,7 +257,7 @@ nav ul {
 
 .carousel {
   overflow: hidden;
-  min-width: 90rem;
+  min-width: 45rem;
   display: flex;
   justify-content: center;
   position: relative;
@@ -273,7 +276,7 @@ nav ul {
   width: auto;
   border-radius: 100%;
   margin: 1rem 15rem;
-  height: 60rem;
+  height: 30rem;
 }
 
 .carousel .carouselItemVisible {
@@ -414,13 +417,13 @@ footer ul {
   margin: 2rem 2rem;
 }
 
-.form-wrapper button {
+/* .form-wrapper button {
   width: 50%;
   padding: 1rem;
   margin: 2rem 1rem;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-}
+} */
 
 /* Recipes Page */
 #meal,

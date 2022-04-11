@@ -64,8 +64,8 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  padding: 2rem 0rem;
+  width: 95vw;
+  padding: 1.5rem 2rem;
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
@@ -74,20 +74,21 @@ nav {
   top: 0;
   z-index: 3;
   text-decoration: none;
+  margin: 0 1rem;
 }
 
 nav ul {
   display: flex;
-  flex: 1 1 20rem;
+  flex: 1 1 30rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
   min-height: 10vh;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 #logo {
-  padding-left: 5rem;
+  padding: rem;
   flex: 2 1 20rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
@@ -104,6 +105,9 @@ nav ul {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 10rem;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 5rem;
+  }
 }
 
 .button1,
@@ -178,7 +182,7 @@ nav ul {
 .feature-container {
   display: flex;
   flex-flow: column wrap;
-  margin: 4rem 3rem;
+  margin: 4rem 1.5rem;
 }
 
 .feature-svg {
@@ -235,18 +239,19 @@ nav ul {
 
 #diets {
   min-height: 80vh;
-  margin-top: 5rem;
   background: linear-gradient(to top, #44a1a0, transparent);
+  display: block;
 }
 
 /* Caption text */
 .text {
   color: #0a6e79;
   text-align: center;
-  font-size: 2rem;
-  line-height: 3;
-  margin: 10rem 0rem 8rem 0rem;
-  @media screen and (max-width: 768px) {
+  font-size: 1.1rem;
+  line-height: 10rem;
+  margin: 1.5rem 0rem 4rem 0rem;
+  font-weight: bold;
+  @media (max-width: 768px) {
     font-size: 0.5rem;
   }
 }
@@ -256,12 +261,10 @@ nav ul {
 }
 
 .carousel {
-  overflow: hidden;
-  min-width: 45rem;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
-  max-height: 100rem;
 }
 
 .carousel .carouselItem,
@@ -273,10 +276,12 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: auto;
-  border-radius: 100%;
-  margin: 1rem 15rem;
-  height: 30rem;
+  width: 44vw;
+  border-radius: 25%;
+  margin: 1rem auto;
+  height: 45vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .carousel .carouselItemVisible {
@@ -286,7 +291,8 @@ nav ul {
 
 .carousel .carouselActions {
   display: flex;
-  min-width: 60%;
+  width: 70%;
+  align-items: center;
   justify-content: space-between;
   position: absolute;
   top: 50%;
@@ -361,12 +367,15 @@ footer h5 {
   color: #247b7b;
   flex: 1 1 40rem;
   text-align: left;
+  display: flex;
+  padding-top: 2.5rem;
+  align-items: center;
 }
 
 footer ul {
   display: flex;
   list-style: none;
-  flex: 1 1 40rem;
+  flex: 1 1 0rem;
   justify-content: space-between;
   align-items: center;
 }

@@ -65,7 +65,6 @@ nav {
   display: flex;
   justify-content: space-between;
   width: 95vw;
-  padding: 1.5rem 2rem;
   min-height: 10vh;
   align-items: center;
   flex-wrap: wrap;
@@ -92,6 +91,7 @@ nav ul {
   flex: 2 1 20rem;
   font-family: "Montserrat Alternates", sans-serif;
   font-weight: 400;
+  padding-left: 4rem;
 }
 
 .nav-links {
@@ -105,9 +105,6 @@ nav ul {
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 10rem;
-  @media screen and (max-width: 768px) {
-    margin-bottom: 5rem;
-  }
 }
 
 .button1,
@@ -149,6 +146,7 @@ nav ul {
   background-size: cover;
   background-position: center;
   color: #fffffa;
+  object-fit: cover;
 }
 
 .hero h2 {
@@ -247,13 +245,9 @@ nav ul {
 .text {
   color: #0a6e79;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 2rem;
   line-height: 10rem;
   margin: 1.5rem 0rem 4rem 0rem;
-  font-weight: bold;
-  @media (max-width: 768px) {
-    font-size: 0.5rem;
-  }
 }
 
 .slideshow-container {
@@ -291,7 +285,7 @@ nav ul {
 
 .carousel .carouselActions {
   display: flex;
-  width: 70%;
+  width: 60%;
   align-items: center;
   justify-content: space-between;
   position: absolute;
@@ -317,6 +311,23 @@ nav ul {
 .carousel .carouselActions button:hover {
   border-color: #d4d4cb;
   background-color: transparent;
+}
+
+@media (max-width: 600px) {
+  .text {
+    font-size: 1rem;
+    line-height: 2;
+    margin: 5rem 10rem;
+  }
+  .carousel .carouselItem img {
+    height: 35vh;
+    width: 42vw;
+  }
+
+  .carousel .carouselActions {
+    top: 52.5%;
+    width: 85%;
+  }
 }
 
 @keyframes fadeVisibility {
@@ -351,33 +362,64 @@ nav ul {
 footer {
   color: white;
   background: #fffffa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-wrapper {
   display: flex;
-  padding: 2rem;
-  width: 90%;
   margin: auto;
   align-items: center;
-  min-height: 15vh;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 20vh;
 }
 
 footer h5 {
   color: #247b7b;
-  flex: 1 1 40rem;
-  text-align: left;
+  flex: 0.5 1 10rem;
   display: flex;
-  padding-top: 2.5rem;
   align-items: center;
+  font-size: 1.9rem;
 }
 
 footer ul {
   display: flex;
   list-style: none;
   flex: 1 1 0rem;
-  justify-content: space-between;
-  align-items: center;
+  margin-left: 30rem;
+}
+
+footer ul li {
+  padding: 0 3rem;
+}
+
+@media (max-width: 600px) {
+  footer {
+    color: white;
+    background: #fffffa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+  }
+  footer h5 {
+    color: #247b7b;
+    flex: 0.5 1 10rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+  footer ul {
+    margin-left: 0rem;
+  }
+
+  footer ul li {
+    padding: 0 1.5rem;
+  }
 }
 
 /* Contact Page & Recipes Page Kinda...*/
@@ -402,7 +444,7 @@ footer ul {
   width: auto;
   color: #fffffa;
   border-radius: 20px;
-  padding: 4rem;
+  padding: 1rem 3rem;
 }
 
 .name-form,
@@ -444,23 +486,27 @@ footer ul {
 /* About Page */
 #about {
   min-height: 100vh;
-  margin-bottom: 10rem;
-  background-image: linear-gradient(to top, #fffffa, 20%, transparent),
+  background-image: linear-gradient(360deg, #dadada, 50%, transparent),
     url("/images/joseph-gonzalez-QaGDmf5tMiE-unsplash.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  opacity: 0.85;
 }
 .about-header {
   text-align: center;
-  margin: 30rem 30rem 10rem 30rem;
-  color: #0d5c63;
+  display: flex;
+  margin: 15rem 90rem 5rem 15rem;
+  color: #030303;
   text-decoration: underline 0.5rem solid;
+  background-color: transparent;
+  border-radius: 20px;
+  opacity: 1;
 }
 .about-text {
-  color: #0d5c63;
+  color: #1d2324;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -471,11 +517,15 @@ footer ul {
 
 .about-text p {
   margin-top: 5rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: normal;
 }
 
-@media screen and (max-width: 900px) {
+@media (max-width: 600px) {
+  .hero h2 {
+    text-align: center;
+  }
+
   /* burger thing */
   .burger {
     position: relative;
@@ -526,9 +576,9 @@ footer ul {
     text-align: center;
   }
   footer h5 {
-    padding-bottom: 3rem;
     color: #247b7b;
     flex: 1 1 40rem;
     text-align: center;
+    padding-right: 4rem;
   }
 }

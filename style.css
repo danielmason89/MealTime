@@ -61,19 +61,21 @@ a {
 }
 
 /* Nav and Hero Section */
+/*AHMED: added a background color and commented out some styles*/
 nav {
   display: flex;
   justify-content: space-between;
-  width: 95vw;
-  min-height: 10vh;
+  width: 100%;
+  /* min-height: 10vh; */
   align-items: center;
   flex-wrap: wrap;
-  position: fixed;
+  /* position: fixed; */
   transition: top 0.3s;
   top: 0;
   z-index: 3;
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0;
+  background: white;
 }
 
 nav ul {
@@ -99,12 +101,14 @@ nav ul {
   justify-content: space-around;
 }
 
+
 /* Download Button */
 #btn-container {
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 10rem;
+  /*AHMED: I think this is too big and is not needed*/
+  /* margin-bottom: 10rem; */
 }
 
 .button1,
@@ -214,6 +218,8 @@ nav ul {
   font-size: 2rem;
 }
 
+
+
 .food-header {
   color: #fffffa;
   width: 90%;
@@ -228,9 +234,12 @@ nav ul {
 
 .food-header h3 {
   padding: 9rem 0rem;
-  background: linear-gradient(#0a7f8b, #beb8b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* AHMED: Changed the text color (removed the gradient and put a solid color
+  for better contrast */
+  /* background: linear-gradient(#0a7f8b, #beb8b8); */
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  color: #AEB2B2;
 }
 
 /* Diets Section */
@@ -313,23 +322,6 @@ nav ul {
   background-color: transparent;
 }
 
-@media (max-width: 600px) {
-  .text {
-    font-size: 1rem;
-    line-height: 2;
-    margin: 5rem 10rem;
-  }
-  .carousel .carouselItem img {
-    height: 35vh;
-    width: 42vw;
-  }
-
-  .carousel .carouselActions {
-    top: 52.5%;
-    width: 85%;
-  }
-}
-
 @keyframes fadeVisibility {
   0% {
     opacity: 0.4;
@@ -347,7 +339,8 @@ nav ul {
 }
 
 #cta {
-  min-height: 84vh;
+  /*AHMED: reduced the min-height (from 84vh)*/
+  min-height: 80vh;
   background: linear-gradient(to bottom, #44a1a0, transparent);
   background-size: cover;
   background-repeat: no-repeat;
@@ -392,34 +385,6 @@ footer ul {
 
 footer ul li {
   padding: 0 3rem;
-}
-
-@media (max-width: 600px) {
-  footer {
-    color: white;
-    background: #fffffa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .footer-wrapper {
-    flex-direction: row;
-  }
-  footer h5 {
-    color: #247b7b;
-    flex: 0.5 1 10rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-  }
-  footer ul {
-    margin-left: 0rem;
-  }
-
-  footer ul li {
-    padding: 0 1.5rem;
-  }
 }
 
 /* Contact Page & Recipes Page Kinda...*/
@@ -521,7 +486,8 @@ footer ul li {
   font-weight: normal;
 }
 
-@media (max-width: 600px) {
+/* Styles for mobile */
+@media only screen and (max-width: 767px) {
   .hero h2 {
     text-align: center;
   }
@@ -572,13 +538,67 @@ footer ul li {
   .form-wrapper {
     width: 100%;
   }
+
+  #btn-container {
+    justify-content: center;
+  }
+
+  .button1,
+  .button2 {
+    margin: 4rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 2;
+    margin: 5rem 10rem;
+  }
+  .carousel .carouselItem img {
+    height: 35vh;
+    width: 42vw;
+  }
+
+  .carousel .carouselActions {
+    top: 52.5%;
+    width: 85%;
+  }
+
   footer {
     text-align: center;
+    color: white;
+    background: #fffffa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   footer h5 {
-    color: #247b7b;
+    /*AHMED: Not needed, the color is already defined by
+    the style for the a tag at the start of the CSS file */
+    /* color: #247b7b; */
     flex: 1 1 40rem;
     text-align: center;
     padding-right: 4rem;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+  }
+
+  /*AHMED: I think is part is not needed */
+  /* footer h5 {
+    color: #247b7b;
+    flex: 0.5 1 10rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  } */
+
+  footer ul {
+    margin-left: 0rem;
+  }
+
+  footer ul li {
+    padding: 0 1.5rem;
   }
 }

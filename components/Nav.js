@@ -1,7 +1,7 @@
 import html from "html-literal";
 export default links => html`
   <nav id="navbar">
-    <h1 id="logo"><a href="/Home" data-navigo>Mealtime</a></h1>
+    <h1 id="logo"><a href="/Home" data-navigo>MealTime</a></h1>
     <ul class="hidden--mobile nav-links">
       ${links.map(
         link =>

@@ -48,9 +48,8 @@ p {
 }
 
 a {
-  color: #247b7b;
   text-decoration: none;
-  font-weight: 600;
+  color: #247b7b;
 }
 
 .flex {
@@ -61,7 +60,6 @@ a {
 }
 
 /* Nav and Hero Section */
-/*AHMED: added a background color and commented out some styles*/
 nav {
   display: flex;
   justify-content: space-between;
@@ -69,13 +67,13 @@ nav {
   /* min-height: 10vh; */
   align-items: center;
   flex-wrap: wrap;
-  /* position: fixed; */
+  position: fixed;
   transition: top 0.3s;
   top: 0;
   z-index: 3;
   text-decoration: none;
   margin: 0;
-  background: white;
+  /* background: #fff; */
 }
 
 nav ul {
@@ -91,9 +89,19 @@ nav ul {
 #logo {
   padding: rem;
   flex: 2 1 20rem;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
+  /* font-family: "Montserrat Alternates", sans-serif; */
+  font-weight: normal;
   padding-left: 4rem;
+  font-family: 'Lobster', cursive;
+  font-size: 4rem;
+}
+
+#logo a, nav ul li a {
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #AEB2B2;
 }
 
 .nav-links {
@@ -107,8 +115,7 @@ nav ul {
   text-align: center;
   display: flex;
   flex-flow: row wrap;
-  /*AHMED: I think this is too big and is not needed*/
-  /* margin-bottom: 10rem; */
+  margin-bottom: 10rem;
 }
 
 .button1,
@@ -145,7 +152,9 @@ nav ul {
 /* Hero Section */
 .hero {
   min-height: 80vh;
-  background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  background: linear-gradient(#2C1708, 25%, transparent),
+  url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  /* background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -156,7 +165,8 @@ nav ul {
 .hero h2 {
   text-align: center;
   margin: 25rem 0rem;
-  padding: 0rem 0rem 6rem 0rem;
+  padding: 0rem 2rem 2rem 2rem;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .hero h3 {
@@ -234,11 +244,6 @@ nav ul {
 
 .food-header h3 {
   padding: 9rem 0rem;
-  /* AHMED: Changed the text color (removed the gradient and put a solid color
-  for better contrast */
-  /* background: linear-gradient(#0a7f8b, #beb8b8); */
-  /* -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: #AEB2B2;
 }
 
@@ -339,7 +344,6 @@ nav ul {
 }
 
 #cta {
-  /*AHMED: reduced the min-height (from 84vh)*/
   min-height: 80vh;
   background: linear-gradient(to bottom, #44a1a0, transparent);
   background-size: cover;
@@ -573,9 +577,6 @@ footer ul li {
   }
 
   footer h5 {
-    /*AHMED: Not needed, the color is already defined by
-    the style for the a tag at the start of the CSS file */
-    /* color: #247b7b; */
     flex: 1 1 40rem;
     text-align: center;
     padding-right: 4rem;
@@ -584,15 +585,6 @@ footer ul li {
   .footer-wrapper {
     flex-direction: row;
   }
-
-  /*AHMED: I think is part is not needed */
-  /* footer h5 {
-    color: #247b7b;
-    flex: 0.5 1 10rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-  } */
 
   footer ul {
     margin-left: 0rem;

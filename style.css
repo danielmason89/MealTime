@@ -48,9 +48,8 @@ p {
 }
 
 a {
-  color: #247b7b;
   text-decoration: none;
-  font-weight: 600;
+  color: #247b7b;
 }
 
 .flex {
@@ -64,8 +63,8 @@ a {
 nav {
   display: flex;
   justify-content: space-between;
-  width: 95vw;
-  min-height: 10vh;
+  width: 100%;
+  /* min-height: 10vh; */
   align-items: center;
   flex-wrap: wrap;
   position: fixed;
@@ -73,7 +72,8 @@ nav {
   top: 0;
   z-index: 3;
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 0;
+  /* background: #fff; */
 }
 
 nav ul {
@@ -89,15 +89,26 @@ nav ul {
 #logo {
   padding: rem;
   flex: 2 1 20rem;
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 400;
+  /* font-family: "Montserrat Alternates", sans-serif; */
+  font-weight: normal;
   padding-left: 4rem;
+  font-family: 'Lobster', cursive;
+  font-size: 4rem;
+}
+
+#logo a, nav ul li a {
+  color: #fff;
+}
+
+nav ul li a:hover {
+  color: #AEB2B2;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-around;
 }
+
 
 /* Download Button */
 #btn-container {
@@ -141,7 +152,9 @@ nav ul {
 /* Hero Section */
 .hero {
   min-height: 80vh;
-  background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  background: linear-gradient(#2C1708, 25%, transparent),
+  url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  /* background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -152,7 +165,8 @@ nav ul {
 .hero h2 {
   text-align: center;
   margin: 25rem 0rem;
-  padding: 0rem 0rem 6rem 0rem;
+  padding: 0rem 2rem 2rem 2rem;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .hero h3 {
@@ -214,6 +228,8 @@ nav ul {
   font-size: 2rem;
 }
 
+
+
 .food-header {
   color: #fffffa;
   width: 90%;
@@ -228,9 +244,7 @@ nav ul {
 
 .food-header h3 {
   padding: 9rem 0rem;
-  background: linear-gradient(#0a7f8b, #beb8b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #AEB2B2;
 }
 
 /* Diets Section */
@@ -313,23 +327,6 @@ nav ul {
   background-color: transparent;
 }
 
-@media (max-width: 600px) {
-  .text {
-    font-size: 1rem;
-    line-height: 2;
-    margin: 5rem 10rem;
-  }
-  .carousel .carouselItem img {
-    height: 35vh;
-    width: 42vw;
-  }
-
-  .carousel .carouselActions {
-    top: 52.5%;
-    width: 85%;
-  }
-}
-
 @keyframes fadeVisibility {
   0% {
     opacity: 0.4;
@@ -347,7 +344,7 @@ nav ul {
 }
 
 #cta {
-  min-height: 84vh;
+  min-height: 80vh;
   background: linear-gradient(to bottom, #44a1a0, transparent);
   background-size: cover;
   background-repeat: no-repeat;
@@ -392,34 +389,6 @@ footer ul {
 
 footer ul li {
   padding: 0 3rem;
-}
-
-@media (max-width: 600px) {
-  footer {
-    color: white;
-    background: #fffffa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .footer-wrapper {
-    flex-direction: row;
-  }
-  footer h5 {
-    color: #247b7b;
-    flex: 0.5 1 10rem;
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-  }
-  footer ul {
-    margin-left: 0rem;
-  }
-
-  footer ul li {
-    padding: 0 1.5rem;
-  }
 }
 
 /* Contact Page & Recipes Page Kinda...*/
@@ -521,7 +490,8 @@ footer ul li {
   font-weight: normal;
 }
 
-@media (max-width: 600px) {
+/* Styles for mobile */
+@media only screen and (max-width: 767px) {
   .hero h2 {
     text-align: center;
   }
@@ -572,13 +542,55 @@ footer ul li {
   .form-wrapper {
     width: 100%;
   }
+
+  #btn-container {
+    justify-content: center;
+  }
+
+  .button1,
+  .button2 {
+    margin: 4rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 2;
+    margin: 5rem 10rem;
+  }
+  .carousel .carouselItem img {
+    height: 35vh;
+    width: 42vw;
+  }
+
+  .carousel .carouselActions {
+    top: 52.5%;
+    width: 85%;
+  }
+
   footer {
     text-align: center;
+    color: white;
+    background: #fffffa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   footer h5 {
-    color: #247b7b;
     flex: 1 1 40rem;
     text-align: center;
     padding-right: 4rem;
+  }
+
+  .footer-wrapper {
+    flex-direction: row;
+  }
+
+  footer ul {
+    margin-left: 0rem;
+  }
+
+  footer ul li {
+    padding: 0 1.5rem;
   }
 }

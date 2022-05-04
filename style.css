@@ -91,24 +91,25 @@ nav ul {
   flex: 2 1 20rem;
   /* font-family: "Montserrat Alternates", sans-serif; */
   font-weight: normal;
-  padding-left: 4rem;
-  font-family: 'Lobster', cursive;
+  display: flex;
+  justify-content: center;
+  font-family: "Lobster", cursive;
   font-size: 4rem;
 }
 
-#logo a, nav ul li a {
+#logo a,
+nav ul li a {
   color: #fff;
 }
 
 nav ul li a:hover {
-  color: #AEB2B2;
+  color: #aeb2b2;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-around;
 }
-
 
 /* Download Button */
 #btn-container {
@@ -152,8 +153,8 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
   min-height: 80vh;
-  background: linear-gradient(#2C1708, 25%, transparent),
-  url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
+  background: linear-gradient(#2c1708, 25%, transparent),
+    url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg");
   /* background: url("/images/pablo-merchan-montes-wYOPqmtDD0w-unsplash.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -166,7 +167,7 @@ nav ul li a:hover {
   text-align: center;
   margin: 25rem 0rem;
   padding: 0rem 2rem 2rem 2rem;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .hero h3 {
@@ -228,8 +229,6 @@ nav ul li a:hover {
   font-size: 2rem;
 }
 
-
-
 .food-header {
   color: #fffffa;
   width: 90%;
@@ -244,7 +243,7 @@ nav ul li a:hover {
 
 .food-header h3 {
   padding: 9rem 0rem;
-  color: #AEB2B2;
+  color: #aeb2b2;
 }
 
 /* Diets Section */

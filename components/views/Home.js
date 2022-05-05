@@ -29,21 +29,21 @@ export default () => html`
                 <img class="feature-svg" src="${checkmark}" alt="checkmark">
                 <figcaption class="feature-title feature-text">
                     <h3 class="feature-title">Easy to Navigate.</h3>
-                    <p class="feature-text">So easy to use, you'll trust your child to choose</p>
+                    <p class="feature-text">So easy to use, you'll trust your child to choose.</p>
                 </figcaption>
             </figure>
             <figure class="feature-container">
                 <img class="feature-svg" src="${tasty}" alt="tasty">
                 <figcaption>
                     <h3 class="feature-title">Humble & Tasty recipes.</h3>
-                    <p class="feature-text">We take the effort to showcase everyday meals</p>
+                    <p class="feature-text">We take the effort to showcase everyday meals.</p>
                 </figcaption>
             </figure>
             <figure class="feature-container">
                 <img class="feature-svg" src="${full}" alt="feeling-full">
                 <figcaption>
                     <h3 class="feature-title">Guaranteed to feel full.</h3>
-                    <p class="feature-text">Spend time better, feeling nourished to do other things</p>
+                    <p class="feature-text">Spend time better, feeling nourished to do other things.</p>
                 </figcaption>
             </figure>
         </div>

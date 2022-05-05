@@ -87,7 +87,6 @@ nav ul {
 }
 
 #logo {
-  padding: rem;
   flex: 2 1 20rem;
   /* font-family: "Montserrat Alternates", sans-serif; */
   font-weight: normal;
@@ -97,11 +96,12 @@ nav ul {
   font-size: 4rem;
 }
 
-#logo a,
-nav ul li a {
+nav ul li a,
+#logo a {
   color: #fff;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 nav ul li a:hover {
   color: #aeb2b2;
 }

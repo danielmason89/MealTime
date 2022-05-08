@@ -78,7 +78,7 @@ nav {
 
 nav ul {
   display: flex;
-  flex: 1 1 30rem;
+  flex: 1 1 25rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -109,6 +109,7 @@ nav ul li a:hover {
 .nav-links {
   display: flex;
   justify-content: space-around;
+  padding-right: 8rem;
 }
 
 /* Download Button */
@@ -202,8 +203,10 @@ nav ul li a:hover {
   margin: 4% 40%;
 }
 
+/*AHMED: Added bottom margin*/
 .feat-h2 {
   text-align: center;
+  margin-bottom: 60px;
 }
 
 .feature-title,
@@ -501,13 +504,20 @@ footer ul li {
     display: block;
     cursor: pointer;
   }
+
+  .burger:hover span {
+    background: #aeb2b2;
+  }
+
+  /*AHMED: Changed the color to white*/
   .burger span {
     padding: 0.2rem 2rem;
-    background: #247b7b;
+    background: #fff;
     margin: 0.5rem 0rem;
     display: block;
     transition: all 0.5s ease;
   }
+
   .nav-links a {
     color: white;
     font-size: var(--header3);
@@ -549,6 +559,25 @@ footer ul li {
   .button1,
   .button2 {
     margin: 4rem;
+  }
+
+  /*AHMED: Reduced the top margin*/
+  .features {
+    margin: 10rem 0rem 10rem 0rem;
+  }
+
+  /* AHMED: Make the feature-containers stack vertically */
+  #feature {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feature-container {
+    display: flex;
+    flex-flow: column wrap;
+    /*AHMED: reduced the top and bottom margins*/
+    margin: 1.5rem 1.5rem;
   }
 
   .text {

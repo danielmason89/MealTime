@@ -78,7 +78,7 @@ nav {
 
 nav ul {
   display: flex;
-  flex: 1 1 25rem;
+  flex: 1 1 10rem;
   justify-content: space-between;
   align-items: center;
   list-style: none;
@@ -87,7 +87,7 @@ nav ul {
 }
 
 #logo {
-  flex: 2 1 20rem;
+  flex: 1 1 1rem;
   /* font-family: "Montserrat Alternates", sans-serif; */
   font-weight: normal;
   display: flex;

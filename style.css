@@ -522,8 +522,8 @@ footer ul li {
   .nav-links a {
     color: white;
     font-size: var(--header3);
-    text-decoration: underline;
   }
+
   .nav-links {
     background: #247b7b;
     width: 100%;

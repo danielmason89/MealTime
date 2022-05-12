@@ -439,19 +439,22 @@ footer ul li {
   margin: 2rem 2rem;
 }
 
-/* .form-wrapper button {
-  width: 50%;
-  padding: 1rem;
-  margin: 2rem 1rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-} */
-
 /* Recipes Page */
 #meal,
 #time,
 #diet {
   font-size: 1.2rem;
+}
+
+/* Favorites Page */
+
+#favorites {
+  position: absolute;
+  min-height: 100vh;
+}
+
+.favorites-header {
+  margin: 15rem 0rem;
 }
 
 /* About Page */

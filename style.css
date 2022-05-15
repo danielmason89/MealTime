@@ -455,28 +455,66 @@ footer ul li {
 }
 
 /* About Page */
-#about {
+#about-page {
   min-height: 100vh;
-  background-image: linear-gradient(360deg, #dadada, 50%, transparent),
-    url("/images/joseph-gonzalez-QaGDmf5tMiE-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(#3f210c, transparent);
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  opacity: 0.85;
+  align-items: center;
 }
-.about-header {
-  text-align: center;
+
+#about {
+  width: 70%;
+  height: 600px;
   display: flex;
-  margin: 15rem 90rem 5rem 15rem;
-  color: #030303;
-  text-decoration: underline 0.5rem solid;
-  background-color: transparent;
-  border-radius: 20px;
-  opacity: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
 }
+
+.about-image, .about-text {
+  height: 100%;
+  flex: 1 1 33.3333%;
+}
+
 .about-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 50px;
+}
+
+.about-text h2 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.about-text p {
+  text-align: justify;
+  padding-bottom: 30px;
+  font-weight: 500;
+}
+
+.about-text p:last-of-type {
+  padding-bottom: 0;
+}
+
+#about-1 {
+  background-image: url("/images/about-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#about-2 {
+  background-image: url("/images/about-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+/* .about-text {
   color: #1d2324;
   display: flex;
   flex-flow: column;
@@ -490,7 +528,7 @@ footer ul li {
   margin-top: 5rem;
   font-size: 3.5rem;
   font-weight: normal;
-}
+} */
 
 /* Styles for mobile */
 @media only screen and (max-width: 767px) {

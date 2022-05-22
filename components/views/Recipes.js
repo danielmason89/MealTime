@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default st =>
+export default (st) =>
   html`
     <main>
       <section id="recipes">

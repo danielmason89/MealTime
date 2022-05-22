@@ -96,6 +96,10 @@ nav ul {
   font-size: 4rem;
 }
 
+#logo a:hover {
+  color: #aeb2b2;
+}
+
 nav ul li a,
 #logo a {
   color: #fff;
@@ -203,7 +207,6 @@ nav ul li a:hover {
   margin: 4% 40%;
 }
 
-/*AHMED: Added bottom margin*/
 .feat-h2 {
   text-align: center;
   margin-bottom: 60px;
@@ -455,50 +458,72 @@ footer ul li {
 }
 
 /* About Page */
-#about {
-  min-height: 100vh;
-  background-image: linear-gradient(360deg, #dadada, 50%, transparent),
-    url("/images/joseph-gonzalez-QaGDmf5tMiE-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
+#about-page {
+  padding-top: 130px;
+  background: linear-gradient(#3f210c, transparent);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0.85;
-}
-.about-header {
-  text-align: center;
-  display: flex;
-  margin: 15rem 90rem 5rem 15rem;
-  color: #030303;
-  text-decoration: underline 0.5rem solid;
-  background-color: transparent;
-  border-radius: 20px;
-  opacity: 1;
-}
-.about-text {
-  color: #1d2324;
-  display: flex;
-  flex-flow: column;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+#about-page h2 {
+  margin-bottom: 60px;
   text-align: center;
-  margin: 5rem 30rem 40rem 30rem;
+}
+
+#about-page h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+#about {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.about-image, .about-text {
+  flex: 1 1 33.3333%;
+}
+
+.about-text {
+  padding: 0 50px;
+}
+
+.about-text h2 {
+  text-align: center;
+  padding-bottom: 30px;
 }
 
 .about-text p {
-  margin-top: 5rem;
-  font-size: 3.5rem;
-  font-weight: normal;
+  text-align: justify;
+  padding-bottom: 30px;
+  font-weight: 500;
+  text-indent: 1rem;
 }
 
-/* Styles for mobile */
-@media only screen and (max-width: 767px) {
-  .hero h2 {
-    text-align: center;
-  }
+.about-text p:last-of-type {
+  padding-bottom: 0;
+}
 
-  /* burger thing */
+#about-1 {
+  background-image: url("/images/about-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#about-2 {
+  background-image: url("/images/about-2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 768px) {
+
+/*---------------- Mobile & Tablet Styles - Header & Footer ----------------*/
+
   .burger {
     position: relative;
     display: block;
@@ -509,8 +534,6 @@ footer ul li {
     background: #aeb2b2;
   }
 
-  /*AHMED: Changed the color to white*/
-  /* stylelint-disable-next-line no-descending-specificity */
   .burger span {
     padding: 0.2rem 2rem;
     background: #fff;
@@ -535,65 +558,23 @@ footer ul li {
     align-items: center;
     transition: transform 1s ease;
   }
+
   .nav-open {
     transform: translateX(-100%);
   }
+
   .toggle .line1 {
     transform: rotateZ(45deg) translateY(300%);
     background: white;
   }
+
   .toggle .line2 {
     opacity: 0;
   }
+
   .toggle .line3 {
     transform: rotateZ(-45deg) translateY(-300%);
     background: white;
-  }
-  .form-wrapper {
-    width: 100%;
-  }
-
-  #btn-container {
-    justify-content: center;
-  }
-
-  .button1,
-  .button2 {
-    margin: 4rem;
-  }
-
-  /*AHMED: Reduced the top margin*/
-  .features {
-    margin: 10rem 0rem 10rem 0rem;
-  }
-
-  /* AHMED: Make the feature-containers stack vertically */
-  #feature {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .feature-container {
-    display: flex;
-    flex-flow: column wrap;
-    /*AHMED: reduced the top and bottom margins*/
-    margin: 1.5rem 1.5rem;
-  }
-
-  .text {
-    font-size: 1rem;
-    line-height: 2;
-    margin: 5rem 10rem;
-  }
-  .carousel .carouselItem img {
-    height: 35vh;
-    width: 42vw;
-  }
-
-  .carousel .carouselActions {
-    top: 52.5%;
-    width: 85%;
   }
 
   footer {
@@ -621,5 +602,73 @@ footer ul li {
 
   footer ul li {
     padding: 0 1.5rem;
+  }
+
+/*---------------- Mobile & Tablet Styles - Homepage ----------------*/
+
+  .hero h2 {
+    text-align: center;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  }
+
+  #btn-container {
+    justify-content: center;
+  }
+
+  .button1,
+  .button2 {
+    margin: 4rem;
+  }
+
+  .features {
+    margin: 10rem 0rem 10rem 0rem;
+  }
+
+  #feature {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feature-container {
+    display: flex;
+    flex-flow: column wrap;
+    margin: 1.5rem 1.5rem;
+  }
+
+  .text {
+    font-size: 1rem;
+    line-height: 2;
+    margin: 5rem 10rem;
+  }
+
+  .carousel .carouselItem img {
+    height: 35vh;
+    width: 42vw;
+  }
+
+  .carousel .carouselActions {
+    top: 52.5%;
+    width: 85%;
+  }
+
+/*---------------- Mobile & Tablet Styles - About Page ----------------*/
+  #about {
+    flex-direction: column;
+  }
+
+  .about-image, .about-text {
+    flex-basis: 300px;
+  }
+
+  .about-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
   }
 }

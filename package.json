@@ -27,7 +27,7 @@
     "mongoose": "^5.13.7",
     "morgan": "^1.10.0",
     "navigo": "^7.1.3",
-    "node": "^15.8.0",
+    "node": "^15.14.0",
     "normalize.css": "^8.0.1",
     "parcel-bundler": "^1.12.3",
     "yargs-parser": ">=13.1.2"

@@ -42,7 +42,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://mealtimes.netlify.app/)
 
-[product-screenshot]:
+[product-screenshot]: https://github.com/danielmason89/MealTime/blob/2a261074188754dfbc9bbf36757e12d869fd6472/Mealtime.PNG
 
 <!-- TABLE OF CONTENTS -->
 <details>

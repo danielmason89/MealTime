@@ -22,7 +22,7 @@
 <br />
 <div align="center">
 
-# MealTime - A meal prep solution geared to help busy career orientated millennials, and everyone in-between with meal prep time.
+# MealTime
 
 ### 🥝 About the Project 🍇
 
